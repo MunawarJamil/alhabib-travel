@@ -1,129 +1,170 @@
+"use client";
+
+import Image from "next/image";
 import { IoMdArrowDropdown } from "react-icons/io";
-import UmrahPackages from "./UmrahPackages";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
+import { useState } from "react";
+import { imagesData } from "../data/images";
 import TravelDetails from "./TravelDetails";
+import About from "./About";
+
+// Reusable Dropdown Button Component
+const DropdownButton = ({ label, backgroundColor }) => (
+  <button className={`flex items-center ${backgroundColor} text-white py-2 px-5 md:px-6`}>
+    <span>{label}</span>
+    <IoMdArrowDropdown />
+  </button>
+);
+
 function HomePage() {
+
+  const [activeTab, setActiveTab] = useState("makkah"); 
+
+
+  const [selectedImage, setSelectedImage] = useState("/desktopImages/Snood-Big-Hotel.webp");
+
   return (
     <>
-      {/* hero section  */}
+      {/* Hero Section */}
       <main>
-        <img
+        <Image
           src="/IMG-20241130-WA0001.jpg"
           alt="banner image"
           className="w-full max-h-[90vh]"
+          width={1920}
+          height={1080}
+          priority
         />
       </main>
 
       <section className="md:w-[70%] mx-auto md:mt-32">
+      <div className="p-5">
+        <p className="text-[#d4A10F] text-2xl">Your Comfort, Our Priority</p>
+        <h1 className="text-4xl mt-2 font-bold">Hotels / Accommodations</h1>
+      </div>
+
+      <div className="px-5 py-1">
+        <div className="makkah flex gap-1">
+          <DropdownButton
+            label="Makkah"
+            backgroundColor="bg-[#00454A]"
+            onClick={() => setActiveTab("makkah")}
+          />
+          <DropdownButton
+            label="Madina"
+            backgroundColor="bg-[#D4A10F]"
+            onClick={() => setActiveTab("madina")}
+          />
+          <DropdownButton
+            label="Food"
+            backgroundColor="bg-[#D4A10F]"
+            onClick={() => setActiveTab("food")}
+          />
+        </div>
+      </div>
+
+      {/* Conditionally Render Makkah Hotels */}
+      {activeTab === "makkah" && (
         <div className="p-5">
-          <p className="text-[#d4A10F] text-2xl">Your Comfort, Our Priority</p>
-          <h1 className="text-4xl mt-2 font-bold">Hotels / Accommodations</h1>
-        </div>
-
-        <div className="px-5 py-1">
-          <div className="makkah flex gap-1  ">
-            <button className=" flex items-center   bg-[#00454A] text-white py-2 md:py-4 px-4">
-              <span>Makkah</span>
-              <span>
-                <IoMdArrowDropdown />
-              </span>
-            </button>
-
-            <button className=" flex items-center  bg-[#D4A10F] text-white py-2 px-4">
-              <span>Madina</span>
-              <span>
-                <IoMdArrowDropdown />
-              </span>
-            </button>
-
-            <button className=" flex items-center  bg-[#D4A10F] text-white py-2 px-5 md:px-6">
-              <span>Food</span>
-              <span>
-                <IoMdArrowDropdown />
-              </span>
-            </button>
+          {/* Makkah Hotel Content */}
+          <div>
+            <span className="font-bold text-lg text-[#00454A] ">Emaar Al Khalil Makkah</span>
+            <div className="py-2 text-gray-500">
+              <p>
+                Emaar Al Khalil is ideally located on Ibrahim Khalil Street, just
+                400 meters from Haram Sharif...
+              </p>
+              <p>
+                <span className="font-bold text-[#d4A10F] ">Location :</span>
+                <span>Ibrahim Al Khalil Street - Mesfala, 34452 Makkah, Saudi Arabia</span>
+              </p>
+            </div>
           </div>
+          {/* More Makkah Hotels */}
         </div>
+      )}
 
-        <div className="p-5 ">
-          <span className="font-bold  text-lg">Emaar Al Khalil Makkah </span>
+      {/* Conditionally Render Madina Hotels */}
+      {activeTab === "madina" && (
+        <div className="p-5">
+          {/* Madina Hotel Content */}
+          <div>
+            <span className="font-bold text-lg text-[#00454A] ">Odst Al Madinah</span>
+            <div className="py-2 text-gray-500">
+              <p>
+                Odst Al Madinah is just 150 meters from the Prophet’s Mosque...
+              </p>
+              <p>
+                <span className="font-bold text-[#d4A10F] ">Location :</span>
+                <span>Golden Tulip Al Mektan Madinah Hotel</span>
+              </p>
+            </div>
+          </div>
+          {/* More Madina Hotels */}
+        </div>
+      )}
 
+      {/* Conditionally Render Food Section */}
+      {activeTab === "food" && (
+        <div className="p-5">
+          {/* Food Content */}
+          <span className="font-bold text-lg text-[#00454A] ">FOOD</span>
           <div className="py-2 text-gray-500">
             <p>
-              Emaar Al Khalil is ideally located on Ibrahim Khalil Street, just
-              400 meters from Haram Sharif. Enjoy air-conditioned rooms with
-              flat-screen TVs, a kettle, and 24/7 front desk service in Arabic
-              and English. Our dedicated staff ensures a comfortable stay for
-              all guests. Book now!
-            </p>
-
-            <p>
-              <span>Location : </span>
-              <span>
-                : Ibrahim Al Khalil Street - Mesfala, 34452 Makkah, Saudi Arabia{" "}
-              </span>
+              At Al Habib Travel Ltd, we cater to the diverse tastes of Pakistani, Indian...
             </p>
           </div>
         </div>
+      )}
 
-        {/* mobile images */}
 
-        <div className="flex flex-col lg:flex-row ">
-          <div className="flex lg:flex-col md:gap-5 gap-2 px-5  md:py-5      ">
-            <img
-              src="./mobile-images/Snood-Hotel-Small.webp"
-              alt="jyad hotel"
-              className="  rounded-lg  max-w-20 md:max-w-36  cursor-pointer hover:border"
-            />
 
-            <img
-              src="./mobile-images/Snood-Ajyad-Hotel_4_thumbnail.jpg"
-              alt="jyad hotel"
-              className="  rounded-lg  max-w-20 md:max-w-36  cursor-pointer hover:border"
-            />
 
-            <img
-              src="./mobile-images/Snood-Ajyad-Hotel_2_thumbnail.jpg"
-              alt="jyad hotel"
-              className="  rounded-lg  max-w-20 md:max-w-36 cursor-pointer hover:border"
-            />
 
-            <img
-              src="./mobile-images/Snood-Ajyad-Hotel_3_thumbnail.jpg"
-              alt="jyad hotel"
-              className=" rounded-lg max-w-20 md:max-w-36  cursor-pointer hover:border"
-            />
 
-            <img
-              src="./mobile-images/Snood-Ajyad-Hotel_location.jpg"
-              alt="jyad hotel"
-              className="  rounded-lg  max-w-20 md:max-w-36   cursor-pointer hover:border"
-            />
+        {/* Mobile Images */}
+        <div className="flex flex-col lg:flex-row gap-5 p-5">
+          {/* Smaller Images */}
+          <div className="flex overflow-x-auto lg:flex-col md:overflow-y-auto gap-3">
+            {imagesData.map((image, index) => (
+              <Image
+                key={index}
+                src={image.small}
+                alt={`Thumbnail ${index + 1}`}
+                className="rounded-lg cursor-pointer hover:border hover:border-gray-400 transition"
+                width={100}
+                height={100}
+                onClick={() => setSelectedImage(image.large)} // Update selected image
+              />
+            ))}
           </div>
-          {/* desktop images */}
 
-          <div className="p-5 lg:px-0 ">
-            <img
-              src="./desktopImages/Snood-Big-Hotel.webp"
-              alt=""
-              className="rounded-xl    object-cover "
+          {/* Larger Image */}
+          <div className="flex justify-center items-center w-full">
+            <Image
+              src={selectedImage}
+              alt="Selected large image"
+              className="rounded-xl object-cover lg:max-h-[40rem] lg:object-cover"
+              width={1200}
+              height={500}
+              priority
             />
           </div>
         </div>
       </section>
 
-      {/* umra packages */}
-
+      {/* Umrah Packages */}
       <section>
         <Carousel />
-<TravelDetails/>
-        {/* <UmrahPackages /> */}
+        <TravelDetails />
       </section>
 
-      <section>
-        {/* <FOOTER /> */}
+      {/* About Us Section */}
+      <About />
 
+      {/* Footer Section */}
+      <section>
         <Footer />
       </section>
     </>

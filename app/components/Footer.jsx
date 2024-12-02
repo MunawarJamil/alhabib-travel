@@ -1,5 +1,14 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
+// Reusable Icon Component
+const Icon = ({ children, label, className }) => (
+  <div className="flex items-start mb-6 lg:mb-0">
+    <div className={`text-red-600 text-3xl mr-3 ${className}`} aria-label={label}>
+      {children}
+    </div>
+  </div>
+);
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
@@ -10,7 +19,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img
                 src="/logo.webp"
-                alt="Bakhla Logo"
+                alt="Al Habib Travel Logo"
                 className="w-12 h-12 mr-3"
               />
               <div>
@@ -29,26 +38,26 @@ const Footer = () => {
           {/* Right Section */}
           <div className="flex flex-col lg:flex-row lg:w-1/2 justify-around">
             {/* Call Us */}
-            <div className="flex items-start mb-6 lg:mb-0">
-              <FaPhoneAlt className="text-red-600 text-3xl mr-3" />
+            <Icon label="Call Us">
+              <FaPhoneAlt />
               <div>
                 <h3 className="font-bold text-lg mb-1">Call us</h3>
                 <p className="text-gray-400 text-sm">+91 9920820751</p>
               </div>
-            </div>
+            </Icon>
 
             {/* Write to Us */}
-            <div className="flex items-start mb-6 lg:mb-0">
-              <FaEnvelope className="text-red-600 text-3xl mr-3" />
+            <Icon label="Write to us">
+              <FaEnvelope />
               <div>
                 <h3 className="font-bold text-lg mb-1">Write to us</h3>
                 <p className="text-gray-400 text-sm">sales@bakhlatours.com</p>
               </div>
-            </div>
+            </Icon>
 
             {/* Address */}
-            <div className="flex items-start">
-              <FaMapMarkerAlt className="text-red-600 text-3xl mr-3" />
+            <Icon label="Address">
+              <FaMapMarkerAlt />
               <div>
                 <h3 className="font-bold text-lg mb-1">Address</h3>
                 <p className="text-gray-400 text-sm leading-6">
@@ -56,7 +65,7 @@ const Footer = () => {
                   Bhendi Bazaar, Mumbai, Maharashtra 400009
                 </p>
               </div>
-            </div>
+            </Icon>
           </div>
         </div>
 
@@ -64,7 +73,8 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
           ©2024 Bakhla Tours & Travels Pvt. Ltd. All Rights Reserved.
           <br />
-          Bakhlatours.com | Disclaimer | Privacy Policy
+          <a href="/disclaimer" className="hover:text-[#D4A10F]">Disclaimer</a> | 
+          <a href="/privacy-policy" className="hover:text-[#D4A10F]"> Privacy Policy</a>
         </div>
       </div>
     </footer>
