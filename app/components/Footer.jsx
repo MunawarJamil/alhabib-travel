@@ -65,11 +65,13 @@ const Footer = () => {
               <FaMapMarkerAlt />
               <div>
                 <h3 className="font-bold text-lg mb-1">Office</h3>
-                 
-                  <p className="text-gray-400 text-sm leading-6">Office 10378 182-184</p>
-                   <p className="text-gray-400 text-sm leading-6">High Street North East Ham London England
-                  E6 2JA</p> 
-              
+
+                <p className="text-gray-400 text-sm leading-6">
+                  Office 10378 182-184
+                </p>
+                <p className="text-gray-400 text-sm leading-6">
+                  High Street North East Ham London England E6 2JA
+                </p>
               </div>
             </Icon>
           </div>
@@ -77,7 +79,10 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-        <span className="font-bold">Note: </span>All fares advertised are subject to availability and start from the prices we have mentioned. Fares are only guaranteed until ticketed. Offers may be withdrawn without any prior notice
+          <span className="font-bold">Note: </span>All fares advertised are
+          subject to availability and start from the prices we have mentioned.
+          Fares are only guaranteed until ticketed. Offers may be withdrawn
+          without any prior notice
           <br />
           <a href="/disclaimer" className="hover:text-[#D4A10F]">
             Disclaimer

@@ -13,17 +13,16 @@ import Testimonial from "./Testimpnial";
 // Reusable Dropdown Button Component
 const DropdownButton = ({ label, isActive, onClick }) => (
   <button
-  onClick={onClick}
-  className={`flex items-center justify-center text-black py-2 lg:py-4 px-5 md:px-6 rounded-sm hover:shadow-2xl transition-transform duration-300 hover:scale-105 ${
-    isActive
-      ? "bg-[#00454A] text-white font-bold"
-      : "bg-white text-black border py-4 hover:bg-[#D4A10F] hover:text-white"
-  }`}
->
-  <span>{label}</span>
-  <IoMdArrowDropdown className="ml-2" />
-</button>
-
+    onClick={onClick}
+    className={`flex items-center justify-center text-black py-2 lg:py-4 px-5 md:px-6 rounded-sm hover:shadow-2xl transition-transform duration-300 hover:scale-105 ${
+      isActive
+        ? "bg-[#00454A] text-white font-bold"
+        : "bg-white text-black border py-4 hover:bg-[#D4A10F] hover:text-white"
+    }`}
+  >
+    <span>{label}</span>
+    <IoMdArrowDropdown className="ml-2" />
+  </button>
 );
 
 function HomePage() {
@@ -46,18 +45,20 @@ function HomePage() {
         />
       </main>
 
-      <section className="md:w-[70%] mx-auto md:mt-32">
+      <section className=" w-full md:w-[70%] mx-auto md:mt-32">
         <div>
           <div className="p-5">
-            <p className="text-[#d4A10F] text-2xl">
+            <p className="text-[#d4A10F]    text-2xl">
               Your Comfort, Our Priority
             </p>
-            <h1 className="text-4xl mt-2 font-bold ">Hotels / Accommodations</h1>
+            <h1 className=" text-2xl text-ellipsis md:text-4xl mt-2 font-bold    ">
+              Hotels / Accommodations
+            </h1>
           </div>
 
           <div className="px-5 py-1  overflow-x-auto ">
             <div className="makkah flex gap-2">
-            <DropdownButton
+              <DropdownButton
                 label="Makkah"
                 isActive={activeTab === "makkah"}
                 onClick={() => setActiveTab("makkah")}
@@ -67,7 +68,7 @@ function HomePage() {
                 isActive={activeTab === "madina"}
                 onClick={() => setActiveTab("madina")}
               />
-               <DropdownButton
+              <DropdownButton
                 label="Food"
                 isActive={activeTab === "food"}
                 onClick={() => setActiveTab("food")}
@@ -282,7 +283,7 @@ function HomePage() {
       </section>
 
       <About />
-<Testimonial/>
+      <Testimonial />
       <section>
         <Footer />
       </section>
