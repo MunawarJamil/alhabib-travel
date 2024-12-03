@@ -4,17 +4,24 @@ import { GiTireIronCross } from "react-icons/gi";
 import { useState } from "react";
 import Image from "next/image";
 import { MdOutlineContactPhone } from "react-icons/md";
+import InquiryForm from "./InquiryForm";
 
 function Navbar() {
+  const [isformOpen, setIsformOpen] = useState(false);
   const [toggle, isToggle] = useState(false);
 
   function onToggleClick() {
     isToggle(!toggle);
   }
 
+  // Function to close the form
+  const closeForm = () => {
+    setIsformOpen(false);
+  };
+
   return (
     <>
-      <nav className="w-full py-2 flex justify-between md:justify-around relative items-center bg-slate-200 px-10">
+      <nav className="w-full py-2 flex justify-between md:justify-around relative items-center bg-gray-50   shadow-xl px-10">
         {/* Toggle Buttons */}
         <div className="md:hidden">
           {toggle ? (
@@ -24,7 +31,10 @@ function Navbar() {
                 className="w-8 h-10"
               />
               <div className="contact">
-                <button className="absolute bg-[#00454A] top-[6rem] w-[90%] left-8 py-5 text-white border-2 font-bold text-lg flex items-center justify-center gap-3">
+                <button
+                  onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
+                  className="absolute bg-[#d4A10F] top-[6rem] w-[90%] left-6 py-5 text-white border-2 font-bold text-lg flex items-center justify-center gap-3"
+                >
                   <MdOutlineContactPhone /> CONTACT US
                 </button>
               </div>
@@ -50,11 +60,17 @@ function Navbar() {
 
         {/* Contact Button for Larger Screens */}
         <div className="hidden md:flex contact">
-          <button className="flex items-center gap-3 bg-[#00454A] px-5 py-4 border-b-2 text-white font-bold text-lg">
+          <button
+            onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
+            className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-4 border-b-2 text-white font-bold text-lg"
+          >
             <MdOutlineContactPhone /> CONTACT US
           </button>
         </div>
       </nav>
+
+      {/* Conditionally Render InquiryForm */}
+      {isformOpen && <InquiryForm closeForm={closeForm} />}
     </>
   );
 }

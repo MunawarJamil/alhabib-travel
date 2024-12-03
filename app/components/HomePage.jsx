@@ -8,16 +8,22 @@ import Footer from "./Footer";
 import TravelDetails from "./TravelDetails";
 import About from "./About";
 import { imagesData } from "../data/images";
+import Testimonial from "./Testimpnial";
 
 // Reusable Dropdown Button Component
-const DropdownButton = ({ label, backgroundColor, isActive, onClick }) => (
+const DropdownButton = ({ label, isActive, onClick }) => (
   <button
-    onClick={onClick} // Attach the onClick handler
-    className={`flex items-center ${backgroundColor} text-white py-2 lg:py-4  px-5 md:px-6 rounded-md transition hover:opacity-90`}
-  >
-    <span>{label}</span>
-    <IoMdArrowDropdown className="ml-2" />
-  </button>
+  onClick={onClick}
+  className={`flex items-center justify-center text-black py-2 lg:py-4 px-5 md:px-6 rounded-sm hover:shadow-2xl transition-transform duration-300 hover:scale-105 ${
+    isActive
+      ? "bg-[#00454A] text-white font-bold"
+      : "bg-white text-black border py-4 hover:bg-[#D4A10F] hover:text-white"
+  }`}
+>
+  <span>{label}</span>
+  <IoMdArrowDropdown className="ml-2" />
+</button>
+
 );
 
 function HomePage() {
@@ -33,7 +39,7 @@ function HomePage() {
         <Image
           src="/banner-home.jpg"
           alt="banner image"
-          className="w-full max-h-[100vh] object-cover "
+          className="w-full max-h-[100vh] object-cover  "
           width={1920}
           height={1080}
           priority
@@ -46,24 +52,24 @@ function HomePage() {
             <p className="text-[#d4A10F] text-2xl">
               Your Comfort, Our Priority
             </p>
-            <h1 className="text-4xl mt-2 font-bold">Hotels / Accommodations</h1>
+            <h1 className="text-4xl mt-2 font-bold ">Hotels / Accommodations</h1>
           </div>
 
-          <div className="px-5 py-1">
+          <div className="px-5 py-1  overflow-x-auto ">
             <div className="makkah flex gap-2">
-              <DropdownButton
+            <DropdownButton
                 label="Makkah"
-                backgroundColor="bg-[#00454A] hover:bg-[#d4A10F]"
+                isActive={activeTab === "makkah"}
                 onClick={() => setActiveTab("makkah")}
               />
               <DropdownButton
-                label="Madina"
-                backgroundColor="bg-[#00454A]  hover:bg-[#d4A10F]"
+                label="Madinah"
+                isActive={activeTab === "madina"}
                 onClick={() => setActiveTab("madina")}
               />
-              <DropdownButton
+               <DropdownButton
                 label="Food"
-                backgroundColor="bg-[#00454A]  hover:bg-[#d4A10F]"
+                isActive={activeTab === "food"}
                 onClick={() => setActiveTab("food")}
               />
             </div>
@@ -71,7 +77,7 @@ function HomePage() {
 
           {/* Conditional Rendering for Tabs */}
           {activeTab === "makkah" && (
-            <div className="p-5">
+            <div className="p-5 hover:shadow-2xl transition-transform duration-300 hover:scale-95">
               <div>
                 <span className="font-bold text-lg text-[#00454A] ">
                   Emaar Al Khalil Makkah
@@ -147,7 +153,7 @@ function HomePage() {
           )}
 
           {activeTab === "madina" && (
-            <div className="p-5">
+            <div className="p-5 hover:shadow-2xl transition-transform duration-300 hover:scale-95">
               <div>
                 <span className="font-bold text-lg text-[#00454A] ">
                   Odst Al Madinah{" "}
@@ -222,7 +228,7 @@ function HomePage() {
           )}
 
           {activeTab === "food" && (
-            <div className="p-5">
+            <div className="p-5 hover:shadow-2xl transition-transform duration-300 hover:scale-95">
               <span className="font-bold text-lg text-[#00454A] ">FOOD </span>
               <div className="py-2 text-gray-500">
                 <p>
@@ -239,15 +245,15 @@ function HomePage() {
         </div>
 
         {/* Mobile Images */}
-        <div className="flex flex-col lg:flex-row gap-5 p-5">
+        <div className="flex flex-col lg:flex-row gap-5 p-5   ">
           {/* Thumbnail Images */}
-          <div className="flex overflow-x-auto lg:flex-col md:overflow-y-auto gap-3">
+          <div className="flex overflow-x-auto lg:flex-col md:overflow-y-auto gap-3 ">
             {imagesData.map((image, index) => (
               <Image
                 key={index}
                 src={image.small}
                 alt={`Thumbnail ${index + 1}`}
-                className="rounded-lg cursor-pointer hover:border hover:border-gray-400 transition"
+                className="rounded-lg cursor-pointer   hover:border-gray-400  hover:shadow-2xl hover:border-4 transition-transform duration-300  "
                 width={100}
                 height={100}
                 onClick={() => setSelectedImage(image.large)}
@@ -260,7 +266,7 @@ function HomePage() {
             <Image
               src={selectedImage}
               alt="Selected large image"
-              className="rounded-xl object-cover lg:max-h-[40rem] lg:object-cover"
+              className="rounded-xl object-cover lg:max-h-[40rem] lg:object-cover hover:shadow-2xl transition-transform duration-300 hover:scale-95"
               width={1200}
               height={500}
               priority
@@ -276,7 +282,7 @@ function HomePage() {
       </section>
 
       <About />
-
+<Testimonial/>
       <section>
         <Footer />
       </section>

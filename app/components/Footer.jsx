@@ -3,7 +3,10 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 // Reusable Icon Component
 const Icon = ({ children, label, className }) => (
   <div className="flex items-start mb-6 lg:mb-0">
-    <div className={`text-red-600 text-3xl mr-3 ${className}`} aria-label={label}>
+    <div
+      className={`text-red-600 text-3xl mr-3 ${className}`}
+      aria-label={label}
+    >
       {children}
     </div>
   </div>
@@ -11,16 +14,16 @@ const Icon = ({ children, label, className }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
+    <footer className="bg-black text-white py-8 px-5">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className="flex flex-col lg:flex-row  justify-between items-start lg:items-center">
           {/* Left Section */}
-          <div className="mb-6 lg:mb-0 lg:w-1/2">
+          <div className="mb-6 lg:mb-0 lg:w-1/3">
             <div className="flex items-center mb-4">
               <img
                 src="/logo.webp"
                 alt="Al Habib Travel Logo"
-                className="w-12 h-12 mr-3"
+                className="w-20 h-20 mr-3"
               />
               <div>
                 <h2 className="text-xl font-bold">Al Habib Travel</h2>
@@ -28,10 +31,10 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-6">
-              We at Bakhla Tours & Travels Pvt. Ltd. are serving pilgrims from
-              the last 3 decades (30 years) with the help of the founder of our
-              company, Mr. Rashid Ahmed Bakhla who established this company in
-              1989.
+              Al Habib Travel is the most trusted & reliable agency among UK
+              Muslims. We provide bespoke Umrah travel solutions & package
+              designing services to meet budget range and facilities
+              requirements of pilgrims.
             </p>
           </div>
 
@@ -42,7 +45,7 @@ const Footer = () => {
               <FaPhoneAlt />
               <div>
                 <h3 className="font-bold text-lg mb-1">Call us</h3>
-                <p className="text-gray-400 text-sm">+91 9920820751</p>
+                <p className="text-gray-400 text-sm">0203 504 2344</p>
               </div>
             </Icon>
 
@@ -51,7 +54,9 @@ const Footer = () => {
               <FaEnvelope />
               <div>
                 <h3 className="font-bold text-lg mb-1">Write to us</h3>
-                <p className="text-gray-400 text-sm">sales@bakhlatours.com</p>
+                <p className="text-gray-400 text-sm">
+                  info@alhabibtravel.co.uk
+                </p>
               </div>
             </Icon>
 
@@ -59,11 +64,12 @@ const Footer = () => {
             <Icon label="Address">
               <FaMapMarkerAlt />
               <div>
-                <h3 className="font-bold text-lg mb-1">Address</h3>
-                <p className="text-gray-400 text-sm leading-6">
-                  Shop Number 20, Haroon Manzil, B Block, 147, Imamwada Road,
-                  Bhendi Bazaar, Mumbai, Maharashtra 400009
-                </p>
+                <h3 className="font-bold text-lg mb-1">Office</h3>
+                 
+                  <p className="text-gray-400 text-sm leading-6">Office 10378 182-184</p>
+                   <p className="text-gray-400 text-sm leading-6">High Street North East Ham London England
+                  E6 2JA</p> 
+              
               </div>
             </Icon>
           </div>
@@ -71,10 +77,16 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-          ©2024 Bakhla Tours & Travels Pvt. Ltd. All Rights Reserved.
+        <span className="font-bold">Note: </span>All fares advertised are subject to availability and start from the prices we have mentioned. Fares are only guaranteed until ticketed. Offers may be withdrawn without any prior notice
           <br />
-          <a href="/disclaimer" className="hover:text-[#D4A10F]">Disclaimer</a> | 
-          <a href="/privacy-policy" className="hover:text-[#D4A10F]"> Privacy Policy</a>
+          <a href="/disclaimer" className="hover:text-[#D4A10F]">
+            Disclaimer
+          </a>{" "}
+          |
+          <a href="/privacy-policy" className="hover:text-[#D4A10F]">
+            {" "}
+            Privacy Policy
+          </a>
         </div>
       </div>
     </footer>
