@@ -39,7 +39,7 @@ function Testimonial() {
       </div>
 
       {/* Grid/Flex Content */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto ">
         <div className="grid grid-cols-3 gap-6 my-10 ml-1 md:ml-0   min-w-[65rem]   ">
           {carouselData.map((item, index) => (
             <div

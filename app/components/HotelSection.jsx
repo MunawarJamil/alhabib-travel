@@ -235,7 +235,7 @@ function HotelSection() {
 
         {/* Food Tab */}
         {activeTab === "food" && (
-          <div className="p-5 hover:shadow-2xl  transition-transform duration-300 hover:scale-95">
+          <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
             <span className="font-bold text-xl text-[#00454A]">
               Explore Delicious Food Options
             </span>

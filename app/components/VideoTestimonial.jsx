@@ -25,7 +25,7 @@ function VideoTestimonial() {
     <div className="w-[90%] md:w-[70%] mx-auto">
       {/* Grid/Flex Content */}
       <div className="overflow-x-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-5 ml-1 md:ml-0 min-w-[65rem]">
+        <div className="grid  grid-cols-3 gap-6 my-5 ml-1 md:ml-0 min-w-[85rem] md:min-w-[65rem] ">
           {videoData.map((item, index) => (
             <div
               key={index}
