@@ -61,7 +61,7 @@ function Testimonial() {
 
               {/* Quote */}
               <blockquote className="text-lg font-medium text-gray-900 dark:text-white text-center">
-                "{item.quote}"
+                &quot;{item.quote}&quot;
               </blockquote>
 
               {/* Client Info */}
