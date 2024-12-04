@@ -9,7 +9,7 @@ import TravelDetails from "./TravelDetails";
 import About from "./About";
 import { imagesData } from "../data/images";
 import Testimonial from "./Testimpnial";
-
+import Hero from "./Hero";
 // Reusable Dropdown Button Component
 const DropdownButton = ({ label, isActive, onClick }) => (
   <button
@@ -34,17 +34,14 @@ function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <main>
-        <Image
-          src="/banner-home.jpg"
-          alt="banner image"
-          className="w-full max-h-[100vh] object-cover  "
-          width={1920}
-          height={1080}
-          priority
-        />
-      </main>
+     
+
+<Hero/>
+
+
+
+
+
 
       <section className="md:w-[70%] mx-auto md:mt-32">
         <div>
