@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 const InquiryForm = ({ closeForm }) => {
   const form = useRef();
@@ -36,7 +37,13 @@ const InquiryForm = ({ closeForm }) => {
           <FaTimes size={20} />
         </button>
         <div className="text-center mb-4">
-          <img src="/logo.webp" alt="Logo" className="mx-auto w-16 mb-2" />
+          <Image
+            src="/logo.webp"
+            alt="Logo"
+            width={64} // Tailwind's w-16 is 16 * 4 = 64px
+            height={64} // Tailwind's w-16 and h-16 are the same for a square image
+            className="mx-auto mb-2"
+          />
           <h2 className="text-lg font-semibold">Send your message</h2>
           <p className="text-sm text-gray-600">
             Our team will get in touch with you.

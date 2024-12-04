@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 // Sample data
@@ -66,14 +67,16 @@ function Testimonial() {
               {/* Client Info */}
               <figcaption className="mt-4 flex items-center">
                 {/* Avatar */}
-                <img
+                <Image
                   src={
                     item.gender === "female"
                       ? "/femaleAvatar11.jpg"
                       : "/maleAvatar.webp"
                   }
                   alt={`${item.title}'s avatar`}
-                  className="w-12 h-12 rounded-full border-2 border-[#D4A10F] mr-4"
+                  width={48} // Tailwind's w-12 (12 * 4 = 48px)
+                  height={48} // Tailwind's h-12 (12 * 4 = 48px)
+                  className="rounded-full border-2 border-[#D4A10F] mr-4"
                 />
                 <div>
                   {/* Name */}

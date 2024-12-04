@@ -47,7 +47,7 @@ function Faqs() {
       {/* Heading */}
       <div className="text-center text-3xl px-4 font-bold mb-8">
         <h2 className="text-sm my-2 text-[#D4A10F] uppercase tracking-wider animate-bounce">
-          FAQ&apos;s
+          FAQ's
         </h2>
         Frequently Asked Questions
       </div>
