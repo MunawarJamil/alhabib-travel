@@ -1,135 +1,111 @@
-"use client";
-
-import React, { useState } from "react";
-import { FaTimes } from "react-icons/fa"; 
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FaTimes } from "react-icons/fa";
 
 const InquiryForm = ({ closeForm }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    acceptPolicy: false,
-  });
+  const form = useRef();
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    // Add your form submission logic here (e.g., API call)
+    setIsSending(true);
+    try {
+      await emailjs.sendForm(
+        "service_vpxmfgq",
+        "template_rbmwu2c",
+        form.current,
+        { publicKey: "g9xwc_LT3hYleKIQm" }
+      );
+      setStatusMessage("Your inquiry has been sent successfully!");
+      form.current.reset();
+    } catch (error) {
+      setStatusMessage("Failed to send your inquiry. Please try again later.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
-  return (<>
-    <div className="bg-[#00454A] w-full lg:h-[100%]"> 
-    <div className="bg-white p-6 rounded-lg  max-w-sm md:max-w-xl border-t-8 border-l-8 shadow-2xl mx-auto relative top-20">
-      {/* Close Icon */}
-      <button
-        onClick={closeForm} // Close the form when clicked
-        className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
-      >
-        <FaTimes size={20} />
-      </button>
-
-      {/* Header */}
-      <div className="text-center mb-4">
-        <img
-          src="/logo.webp" // Replace with your logo's path in the public folder
-          alt="Logo"
-          className="mx-auto w-16 mb-2"
-        />
-        <h2 className="text-lg font-semibold">Kindly fill this form</h2>
-        <p className="text-sm text-gray-600">
-          Our team will get in touch with you.
-        </p>
-      </div>
-
-      {/* Form */}
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium">
-            Name*
-          </label>
+  return (
+    <div className="bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] w-full h-screen lg:h-[100%]">
+      <div className="bg-gray-200    p-6 rounded-lg max-w-sm md:max-w-xl border-t-8 border-l-8 shadow-xl mx-auto relative top-2 md:top-20">
+        <button
+          onClick={closeForm}
+          className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
+        >
+          <FaTimes size={20} />
+        </button>
+        <div className="text-center mb-4">
+          <img src="/logo.webp" alt="Logo" className="mx-auto w-16 mb-2" />
+          <h2 className="text-lg font-semibold">Send your message</h2>
+          <p className="text-sm text-gray-600">
+            Our team will get in touch with you.
+          </p>
+        </div>
+        <form ref={form} onSubmit={sendEmail}>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            name="from_name"
             className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
             placeholder="Enter your name"
             required
           />
-        </div>
+          {/* Other input fields */}
 
-        <div className="mb-4">
-          <label htmlFor="mobile" className="block text-sm font-medium">
-            Mobile Number*
-          </label>
-          <div className="flex items-center">
+          <div className="mb-4">
+            <label htmlFor="mobile" className="block text-sm font-medium">
+              Mobile Number
+            </label>
+            <div className="flex items-center">
+              <input
+                type="tel"
+                id="mobile"
+                name="from_phone"
+                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
+                placeholder="Mobile number with country code e.g +92"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium">
+              Your Email
+            </label>
             <input
-              type="tel"
-              id="mobile"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleChange}
+              type="email"
+              id="email"
+              name="from_email"
               className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
-              placeholder="Mobile number with country code e.g +92"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium">Your Message</label>
+            <textarea
+              type="text"
+              maxLength={80}
+              name="message"
+              className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
+              placeholder="Enter your message"
               required
             />
           </div>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium">
-            Your Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
-            placeholder="Enter your email"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="acceptPolicy"
-              checked={formData.acceptPolicy}
-              onChange={handleChange}
-              className="w-4 h-4 text-[#d4A10F] border-gray-300 rounded focus:ring-[#d4A10F]"
-              required
-            />
-            <span className="ml-2 text-sm">
-              I accept the{" "}
-              <a href="/privacy-policy" className="text-red-500 underline">
-                Privacy Policy
-              </a>.
-            </span>
-          </label>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-[#00454A] text-white py-2 rounded-md hover:bg-[#d4A10F] transition"
-        >
-          Send Inquiry
-        </button>
-      </form>
+          <button
+            type="submit"
+            disabled={isSending}
+            className="w-full bg-[#00454A] text-white py-2 rounded-md hover:bg-[#d4A10F] transition"
+          >
+            {isSending ? "Sending..." : "Send Inquiry"}
+          </button>
+        </form>
+        {statusMessage && (
+          <p className="text-center text-sm mt-4">{statusMessage}</p>
+        )}
+      </div>
     </div>
-
-    </div>
-    </>);
+  );
 };
 
 export default InquiryForm;

@@ -25,16 +25,16 @@ const accordionData = [
     content:
       "The transport for ziyarat's for Makkah & Madinah is not included. You can add into the package by paying £25 per person for both cities.",
   },
-  {
-    title: "Additional Checked Baggage",
-    content:
-      "If the luggage exceeds the 1st checked baggage which is 28kg, then you will have to pay at the airport. Additional baggage is not included.",
-  },
-  {
-    title: "Room Service",
-    content:
-      "Room service is the service of delivering food, drinks, or other items to your hotel room, which is not included in the Umrah package and has to be paid directly to the hotel on a per-use basis.",
-  },
+  // {
+  //   title: "Additional Checked Baggage",
+  //   content:
+  //     "If the luggage exceeds the 1st checked baggage which is 28kg, then you will have to pay at the airport. Additional baggage is not included.",
+  // },
+  // {
+  //   title: "Room Service",
+  //   content:
+  //     "Room service is the service of delivering food, drinks, or other items to your hotel room, which is not included in the Umrah package and has to be paid directly to the hotel on a per-use basis.",
+  // },
 ];
 
 function TravelDetails() {
@@ -46,7 +46,9 @@ function TravelDetails() {
         {accordionData.map((item, index) => (
           <Accordion key={`inclusion-${index}`} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-xl"> {item.title}</AccordionTrigger>
+              <AccordionTrigger className="text-xl">
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent className="text-lg pl-4 text-[#676060]">
                 {item.content}
               </AccordionContent>
@@ -61,7 +63,10 @@ function TravelDetails() {
         {accordionData.map((item, index) => (
           <Accordion key={`exclusion-${index}`} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-xl"> {item.title}</AccordionTrigger>
+              <AccordionTrigger className="text-xl">
+                {" "}
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent className="text-lg pl-4 text-[#676060]">
                 {item.content}
               </AccordionContent>
