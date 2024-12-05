@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 // Reusable Icon Component
@@ -20,10 +21,12 @@ const Footer = () => {
           {/* Left Section */}
           <div className="mb-6 lg:mb-0 lg:w-1/3">
             <div className="flex items-center mb-4">
-              <img
+              <Image
                 src="/logo.webp"
                 alt="Al Habib Travel Logo"
-                className="w-20 h-20 mr-3"
+                width={80} // Equivalent to Tailwind's w-20 (20 * 4 = 80px)
+                height={80} // Equivalent to Tailwind's h-20 (20 * 4 = 80px)
+                className="mr-3"
               />
               <div>
                 <h2 className="text-xl font-bold">Al Habib Travel</h2>

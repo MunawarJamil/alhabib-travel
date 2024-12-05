@@ -1,34 +1,6 @@
 "use client";
-import { FaStar, FaRegStar } from "react-icons/fa";
 import { useState } from "react";
 import { packages } from "../data/packages";
-
-// Function for rendering star ratings
-const StarRating = ({ rating }) => (
-  <div className="flex space-x-1">
-    {[...Array(5)].map((_, i) =>
-      i < rating ? (
-        <FaStar key={i} className="text-[#D4A10F]" />
-      ) : (
-        <FaRegStar key={i} className="text-[#BFBFBF]" />
-      )
-    )}
-  </div>
-);
-
-// Function for rendering hotel lists (both Makkah and Madinah)
-const HotelList = ({ title, hotels }) => (
-  <div className="bg-[#1E1E1E] border border-[#D4A10F] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-transform duration-300 ease-out transform hover:scale-105 anima ">
-    <h3 className="text-xl font-bold text-[#D4A10F] mb-3">{title}</h3>
-    <ul className="text-[#BFBFBF] space-y-2">
-      {hotels.map((hotel, index) => (
-        <li key={index} className="text-base">
-          {hotel}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
 
 export default function Carousel() {
   const months = [
@@ -53,7 +25,7 @@ export default function Carousel() {
       </header>
 
       <div className="p-6 bg-gray-100 py-20 flex flex-col items-center">
-        {/* Carousel Section */}
+        {/* Month Selector */}
         <div className="w-full max-w-4xl">
           <div className="flex space-x-4 overflow-x-auto pb-4 mb-6 scrollbar-hide animate-slideUp">
             {months.map((month) => (
@@ -73,88 +45,64 @@ export default function Carousel() {
         </div>
 
         {/* Package Details */}
-        <div className="w-full border-t md:max-w-[80%] mx-auto shadow-2xl rounded-lg border-[#00454A] p-2 animate-fadeIn">
+        <div className="w-full border-t md:max-w-[80%] mx-auto shadow-2xl rounded-lg border-[#00454A] p-6 animate-fadeIn bg-white">
           {packageData ? (
-            <>
+            <div className="relative p-6 bg-white rounded-lg shadow-lg">
               {/* Header */}
-              <div className="text-center mb-8">
-                <h2 className="md:text-4xl font-extrabold text-[#00454A] mb-3">
-                  {activeMonth} <span className="text-[#D4A10F]">Packages</span>
+              <div className="text-center mb-6">
+                <h2 className="md:text-2xl font-bold text-[#00454A]">
+                  {activeMonth} Packages
                 </h2>
-                <p className="text-lg">Exclusive deals curated for you</p>
+                <p className="text-lg text-gray-600">Exclusive deals for you</p>
               </div>
 
-              {/* Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {/* Star Categories */}
-                <div className="bg-[#00454A] border border-[#D4A10F] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-transform duration-300 hover:scale-105">
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">
-                    ⭐ Star Categories
-                  </h3>
-                  <ul className="space-y-2">
-                    {packageData.starCategories.map((category, index) => (
-                      <li key={index} className="text-white flex items-center">
-                        <span className="mr-2">{category}</span>
-                        <StarRating rating={parseInt(category)} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Prices */}
-                <div className="bg-[#1E1E1E] border border-[#D4A10F] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-transform duration-300 hover:scale-105">
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">
-                    💰 Prices
-                  </h3>
-                  <ul className="text-[#BFBFBF] space-y-2">
-                    <li>
-                      <strong className="text-white">Double:</strong>{" "}
-                      <span>SAR</span> {packageData.prices.double.join(", ")}
-                    </li>
-                    <li>
-                      <strong className="text-white">Triple:</strong>{" "}
-                      <span>SAR</span> {packageData.prices.triple.join(", ")}
-                    </li>
-                    <li>
-                      <strong className="text-white">Quad:</strong>{" "}
-                      <span>SAR</span> {packageData.prices.quad.join(", ")}
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Makkah Hotels */}
-                <HotelList
-                  title="🕌 Makkah Hotels"
-                  className="hover:shadow-2xl transition-transform duration-300 hover:scale-105"
-                  hotels={packageData.makkahHotels}
-                />
-
-                {/* Madinah Hotels */}
-                <HotelList
-                  title="🌇 Madinah Hotels"
-                  hotels={packageData.madinahHotels}
-                />
-
-                {/* Duration */}
-                <div className="bg-[#00454A] border border-[#D4A10F] hover:shadow-2xl transition-transform duration-300 hover:scale-x-90 hover:scale-y-105 rounded-lg shadow-lg p-6 col-span-1 md:col-span-2 lg:col-span-4 text-center">
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3 ">
-                    ⏳ Duration
-                  </h3>
-                  <p className="text-2xl font-extrabold text-white">
-                    {packageData.days} Days
-                  </p>
-                </div>
+              {/* Package Details Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {["double", "triple", "quad"].map((category, index) => (
+                  <div
+                    key={category}
+                    className="p-4 border rounded-lg shadow-md bg-gray-50"
+                  >
+                    <h3 className="text-lg font-semibold capitalize mb-2 text-[#00454A]">
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </h3>
+                    <p className="text-gray-800 font-bold mb-2">
+                      SAR {packageData.prices[category][index].toLocaleString()}
+                    </p>
+                    <p className="text-gray-600">
+                      <span className="font-bold">Makkah Hotel: </span>
+                      {packageData.makkahHotels[index]}
+                    </p>
+                    <p className="text-gray-600">
+                      <span className="font-bold">Madinah Hotel: </span>
+                      {packageData.madinahHotels[index]}
+                    </p>
+                    <p className="text-gray-600">
+                      <span className="font-bold">Star Category: </span>
+                      {packageData.starCategories[index]}
+                    </p>
+                  </div>
+                ))}
               </div>
-            </>
+
+              {/* Duration */}
+              <div className="mt-6 text-center border-t border-gray-300 pt-6">
+                <span className="text-lg font-bold text-[#D4A10F]">
+                  Duration:
+                </span>
+                <span className="text-gray-700 ml-2">
+                  {packageData.days} Days
+                </span>
+              </div>
+            </div>
           ) : (
             <div className="text-center">
               <h2 className="text-2xl font-semibold text-red-600">
                 No package available for {activeMonth}.
               </h2>
             </div>
-          )}
-        </div>
-      </div>
-    </>
-  );
-}
+            )}
+    </div>
+  </div>
+</>
+); } 
