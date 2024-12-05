@@ -28,12 +28,12 @@ function Navbar() {
             <>
               <GiTireIronCross
                 onClick={onToggleClick}
-                className="w-8 h-10"
+                className="w-8 h-10"        
               />
               <div className="contact">
                 <button
                   onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
-                  className="absolute bg-[#d4A10F] top-[6rem] w-[90%] left-6 py-5 text-white border-2 font-bold text-lg flex items-center justify-center gap-3"
+                  className="absolute bg-[#d4A10F] top-[6.5rem] w-[100%] left-0 py-5 text-white border-2 font-bold text-lg flex items-center justify-center gap-3"
                 >
                   <MdOutlineContactPhone /> CONTACT US
                 </button>

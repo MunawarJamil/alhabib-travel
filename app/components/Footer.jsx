@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 const Icon = ({ children, label, className }) => (
   <div className="flex items-start mb-6 lg:mb-0">
     <div
-      className={`text-red-600 text-3xl mr-3 ${className}`}
+      className={`text-[#d4A10F] text-3xl mr-3 ${className}`}
       aria-label={label}
     >
       {children}
@@ -29,7 +29,7 @@ const Footer = () => {
                 className="mr-3"
               />
               <div>
-                <h2 className="text-xl font-bold">Al Habib Travel</h2>
+                <h2 className="text-xl text-[#d4A10F] font-bold">Al Habib Travel</h2>
                 <p className="text-sm">Alhabib Pilgrimage</p>
               </div>
             </div>

@@ -6,37 +6,37 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-// FAQ data related to Umrah packages
+// FAQ data for the homepage
 const accordionData = [
   {
-    title: "Hotel Booking",
+    title: "What is the baggage allowance for my flight?",
     content:
-      "We offer exclusive hotel bookings in Makkah and Madinah near the holy sites, ensuring a comfortable stay for all our clients.",
+      "The first checked baggage is included in all our packages. You’re allowed 28kg per person, which includes 20kg for your main luggage and 8kg for your hand carry. This ensures you can comfortably pack everything you need for your journey.",
   },
   {
-    title: "Food Facilities",
+    title: "What is your refund policy in case of cancellation?",
     content:
-      "Our packages include quality food options during your stay, catering to all dietary preferences with authentic cuisine.",
+      "Our refund policy is designed to be as fair and straightforward as possible. If you need to cancel, the amount refunded will depend on how close the cancellation is to your travel date, as airline tickets and hotel reservations have specific terms. We'll guide you through the process and do our best to minimize any inconvenience. Feel free to contact us for detailed terms when booking.",
   },
   {
-    title: "Flight Services",
+    title: "Will you provide assistance if I face any issues during my trip?",
     content:
-      "We provide round-trip flights with our trusted partners, ensuring comfortable and safe travel for all our guests.",
+      "Absolutely, we’re here to support you every step of the way. We provide free assistance throughout your journey and will stay in touch until your trip concludes. If needed, we can even offer in-person assistance to ensure a smooth and worry-free experience for you.",
   },
   {
-    title: "Transportation to Ziyarat",
+    title: "Will I be traveling with a group, or is it an individual package?",
     content:
-      "We offer convenient transport for Ziyarat trips in Makkah and Madinah, adding an unforgettable experience to your Umrah journey.",
+      "We offer both options! You can choose a private package if you prefer a personalized experience or join a group package, which is a great way to connect with other pilgrims. Group packages depend on availability, so let us know your preference, and we’ll arrange accordingly.",
   },
   {
-    title: "Package Inclusions",
+    title: "Are there any discounts for families or groups?",
     content:
-      "Our packages include accommodation, flights, food, and transportation for a seamless Umrah experience. Additional services are available upon request.",
+      "Yes, we’re pleased to offer special discounted rates for families and groups. This makes it more affordable to share this spiritual journey with your loved ones. Let us know the number of people traveling, and we’ll provide a customized package for you.",
   },
   {
-    title: "Visa Processing",
+    title: "Do you offer installment plans or flexible payment options?",
     content:
-      "We provide assistance with Umrah visa processing to ensure a smooth and hassle-free travel experience.",
+      "Yes, we provide flexible installment plans to make it easier for you to manage the cost of your trip. You can secure your package with an initial deposit, and the remaining balance can be paid in installments. Let us know what works best for you, and we’ll guide you through the process.",
   },
 ];
 
@@ -49,18 +49,23 @@ function Faqs() {
         <h2 className="text-sm my-2 text-[#D4A10F] uppercase tracking-wider animate-bounce">
           FAQ&apos;s
         </h2>
-        Frequently Asked Questions
+        Frequently  <span className="text-[#D4A10F]">Asked</span> Questions
       </div>
 
       {/* FAQ Accordion */}
       <div className="w-[80%] mx-auto">
         {accordionData.map((item, index) => (
-          <Accordion key={`accordion-${index}`} type="single" collapsible>
+          <Accordion
+            key={`accordion-${index}`}
+            type="single"
+            collapsible
+            className="mb-6" // Increase the gap between questions
+          >
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-xl font-semibold py-3 px-5   text-black rounded-md hover:bg-yellow-500 hover:text-white">
+              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-md hover:bg-yellow-500 hover:text-white hover:no-underline"> {/* Smaller text size */}
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-lg pl-4 py-2 text-[#676060] bg-gray-100 rounded-md">
+              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100 rounded-md"> {/* Smaller content text */}
                 {item.content}
               </AccordionContent>
             </AccordionItem>

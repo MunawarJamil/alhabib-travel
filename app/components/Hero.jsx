@@ -4,7 +4,7 @@ import Image from 'next/image'; // Importing Next.js Image component
 function Hero() {
   return (
     <>
-      <style jsx>{`
+      {/* <style jsx>{`
         @media (min-width: 1021px) and (max-width: 1543px) {
           .banner-section {
             grid-template-columns: 1fr;
@@ -14,10 +14,10 @@ function Hero() {
             display: none;
           }
         }
-      `}</style>
+      `}</style> */}
 
       {/* Hero Section for Smaller Screens */}
-      <main className="lg:hidden flex flex-col items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
+      <main className="lg:hidden   items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
         <div className="animate-slide-in-up">
           <Image
             src="/banner-home.jpg"
@@ -28,20 +28,20 @@ function Hero() {
             priority
           />
         </div>
-        <div className="text-center p-8">
+        {/* <div className=" hidden lg:text-center p-8">
           <h1 className="text-4xl font-bold text-white animate-fade-in-up">
             PLAN YOUR UMRAH TODAY!
           </h1>
           <p className="text-xl text-[#d4A10F] italic mt-2 animate-fade-in-up delay-200">
             Trusted by pilgrims, Loved by Families
           </p>
-        </div>
+        </div> */}
       </main>
 
-      {/* Hero Section for Larger Screens */}
+      {/* Hero Section for Larger Screens
       <main className="hidden lg:grid grid-cols-2 font-serif bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] banner-section">
-        {/* Left Section */}
-        <div className="flex flex-col p-20 justify-center animate-slide-in-left">
+        {/* Left Section  
+        <div className= "flex flex-col p-20 justify-center animate-slide-in-left">
           <h1 className="text-6xl leading-relaxed font-bold text-white animate-fade-in">
             PLAN YOUR UMRAH TODAY!
           </h1>
@@ -65,7 +65,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Section */}
+        {/* Right Section  
         <div>
           <div className="banner-image animate-slide-in-right">
             <Image
@@ -79,6 +79,23 @@ function Hero() {
           </div>
         </div>
       </main>
+       */}
+
+
+       {/* new banner section */}
+
+       <main className=" hidden  lg:block  font-serif bg-gradient-to-r">
+       <div className="banner-image animate-slide-in-right">
+            <Image
+              src="/DD-Recovered.jpg"
+              alt="banner image"
+              className="w-full max-h-[100vh] object-cover "
+              width={1920}
+              height={1080}
+              priority
+            />
+          </div>
+       </main>
     </>
   );
 }

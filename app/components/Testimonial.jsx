@@ -40,11 +40,11 @@ function Testimonial() {
 
       {/* Grid/Flex Content */}
       <div className="overflow-x-auto ">
-        <div className="grid grid-cols-3 gap-6 my-10 ml-1 md:ml-0   min-w-[65rem]   ">
+        <div className="grid grid-cols-3 gap-2 my-10 ml-1 md:ml-0   min-w-[60rem]   ">
           {carouselData.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-900 shadow-lg rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-900 shadow-lg rounded-lg transform transition-all duration-300 hover:scale-95 hover:shadow-xl"
             >
               {/* SVG Icon */}
               <svg
