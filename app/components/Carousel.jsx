@@ -7,7 +7,11 @@ import { packages } from "../data/packages";
 const StarRating = ({ rating }) => (
   <div className="flex space-x-1">
     {[...Array(5)].map((_, i) =>
-      i < rating ? <FaStar key={i} className="text-[#D4A10F]" /> : <FaRegStar key={i} className="text-[#BFBFBF]" />
+      i < rating ? (
+        <FaStar key={i} className="text-[#D4A10F]" />
+      ) : (
+        <FaRegStar key={i} className="text-[#BFBFBF]" />
+      )
     )}
   </div>
 );
@@ -27,15 +31,25 @@ const HotelList = ({ title, hotels }) => (
 );
 
 export default function Carousel() {
-  const months = ["Jan-2025", "Feb-2025", "Ramadan 2025", "Apr-2025", "May-2025"];
+  const months = [
+    "Jan-2025",
+    "Feb-2025",
+    "Ramadan 2025",
+    "Apr-2025",
+    "May-2025",
+  ];
   const [activeMonth, setActiveMonth] = useState("Jan-2025");
   const packageData = packages[activeMonth];
 
   return (
     <>
       <header className="text-center py-6 bg-[#00454A] mt-20 shadow-md animate-fadeIn">
-        <h1 className="text-2xl font-bold text-[#D4A10F]">AL HABIB TOURS & TRAVELS PVT. LTD.</h1>
-        <h2 className="text-xl font-bold mt-2 text-white">UMRAH PACKAGES 2025</h2>
+        <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
+          AL HABIB TOURS & TRAVELS PVT. LTD.
+        </h1>
+        <h2 className="text-xl font-bold mt-2 text-white">
+          UMRAH PACKAGES 2025
+        </h2>
       </header>
 
       <div className="p-6 bg-gray-100 py-20 flex flex-col items-center">
@@ -64,7 +78,7 @@ export default function Carousel() {
             <>
               {/* Header */}
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-extrabold text-[#00454A] mb-3">
+                <h2 className="md:text-4xl font-extrabold text-[#00454A] mb-3">
                   {activeMonth} <span className="text-[#D4A10F]">Packages</span>
                 </h2>
                 <p className="text-lg">Exclusive deals curated for you</p>
@@ -74,7 +88,9 @@ export default function Carousel() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Star Categories */}
                 <div className="bg-[#00454A] border border-[#D4A10F] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-transform duration-300 hover:scale-105">
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">⭐ Star Categories</h3>
+                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">
+                    ⭐ Star Categories
+                  </h3>
                   <ul className="space-y-2">
                     {packageData.starCategories.map((category, index) => (
                       <li key={index} className="text-white flex items-center">
@@ -87,37 +103,54 @@ export default function Carousel() {
 
                 {/* Prices */}
                 <div className="bg-[#1E1E1E] border border-[#D4A10F] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-transform duration-300 hover:scale-105">
-
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">💰 Prices</h3>
+                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3">
+                    💰 Prices
+                  </h3>
                   <ul className="text-[#BFBFBF] space-y-2">
                     <li>
-                      <strong className="text-white">Double:</strong> <span>SAR</span> {packageData.prices.double.join(", ")}
+                      <strong className="text-white">Double:</strong>{" "}
+                      <span>SAR</span> {packageData.prices.double.join(", ")}
                     </li>
                     <li>
-                      <strong className="text-white">Triple:</strong> <span>SAR</span> {packageData.prices.triple.join(", ")}
+                      <strong className="text-white">Triple:</strong>{" "}
+                      <span>SAR</span> {packageData.prices.triple.join(", ")}
                     </li>
                     <li>
-                      <strong className="text-white">Quad:</strong> <span>SAR</span> {packageData.prices.quad.join(", ")}
+                      <strong className="text-white">Quad:</strong>{" "}
+                      <span>SAR</span> {packageData.prices.quad.join(", ")}
                     </li>
                   </ul>
                 </div>
- 
+
                 {/* Makkah Hotels */}
-                <HotelList title="🕌 Makkah Hotels"  className="hover:shadow-2xl transition-transform duration-300 hover:scale-105" hotels={packageData.makkahHotels} />
+                <HotelList
+                  title="🕌 Makkah Hotels"
+                  className="hover:shadow-2xl transition-transform duration-300 hover:scale-105"
+                  hotels={packageData.makkahHotels}
+                />
 
                 {/* Madinah Hotels */}
-                <HotelList title="🌇 Madinah Hotels" hotels={packageData.madinahHotels} />
-                
+                <HotelList
+                  title="🌇 Madinah Hotels"
+                  hotels={packageData.madinahHotels}
+                />
+
                 {/* Duration */}
                 <div className="bg-[#00454A] border border-[#D4A10F] hover:shadow-2xl transition-transform duration-300 hover:scale-x-90 hover:scale-y-105 rounded-lg shadow-lg p-6 col-span-1 md:col-span-2 lg:col-span-4 text-center">
-                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3 ">⏳ Duration</h3>
-                  <p className="text-2xl font-extrabold text-white">{packageData.days} Days</p>
+                  <h3 className="text-xl font-bold text-[#D4A10F] mb-3 ">
+                    ⏳ Duration
+                  </h3>
+                  <p className="text-2xl font-extrabold text-white">
+                    {packageData.days} Days
+                  </p>
                 </div>
               </div>
             </>
           ) : (
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-red-600">No package available for {activeMonth}.</h2>
+              <h2 className="text-2xl font-semibold text-red-600">
+                No package available for {activeMonth}.
+              </h2>
             </div>
           )}
         </div>
