@@ -43,13 +43,13 @@ const accordionData = [
 // FAQ Section Component
 function Faqs() {
   return (
-    <div className="w-[90%] mx-auto py-10">
+    <div className="w-full md:w-[90%] mx-auto py-10">
       {/* Heading */}
       <div className="text-center text-3xl px-4 font-bold mb-8">
         <h2 className="text-sm my-2 text-[#D4A10F] uppercase tracking-wider animate-bounce">
           FAQ&apos;s
         </h2>
-        Frequently  <span className="text-[#D4A10F]">Asked</span> Questions
+        Frequently <span className="text-[#D4A10F]">Asked</span> Questions
       </div>
 
       {/* FAQ Accordion */}
@@ -62,10 +62,14 @@ function Faqs() {
             className="mb-6" // Increase the gap between questions
           >
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-md hover:bg-yellow-500 hover:text-white hover:no-underline"> {/* Smaller text size */}
+              <AccordionTrigger className="text-lg  font-medium py-3 px-5 text-black rounded-t-md  hover:bg-yellow-500 hover:text-white hover:no-underline">
+                {" "}
+                {/* Smaller text size */}
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100 rounded-md"> {/* Smaller content text */}
+              <AccordionContent className="text-base leading-8 p-6 py-2 text-[#676060] bg-gray-100  ">
+                {" "}
+                {/* Smaller content text */}
                 {item.content}
               </AccordionContent>
             </AccordionItem>

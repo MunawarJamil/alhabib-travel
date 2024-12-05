@@ -21,19 +21,19 @@ function Navbar() {
 
   return (
     <>
-      <nav className="w-full py-2 flex justify-between md:justify-around relative items-center bg-gray-50   shadow-xl px-10">
+      <nav className="w-full py-3 flex  justify-between relative items-center bg-slate-100 bg-gradient-to-  from-[#0c091d] via-[#0e5243] to-[#093833]  shadow-xl  px-10 md:px-32">
         {/* Toggle Buttons */}
         <div className="md:hidden">
           {toggle ? (
             <>
               <GiTireIronCross
                 onClick={onToggleClick}
-                className="w-8 h-10"        
+                className="w-8 h-10 "        
               />
               <div className="contact">
                 <button
                   onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
-                  className="absolute bg-[#d4A10F] top-[6.5rem] w-[100%] left-0 py-5 text-white border-2 font-bold text-lg flex items-center justify-center gap-3"
+                  className="absolute bg-[#d4A10F] top-[6.5rem] w-[100%] left-0 py-5 text-white   font-bold text-lg flex items-center justify-center gap-3"
                 >
                   <MdOutlineContactPhone /> CONTACT US
                 </button>
@@ -42,7 +42,7 @@ function Navbar() {
           ) : (
             <RxHamburgerMenu
               onClick={onToggleClick}
-              className="w-10 h-10"
+              className="w-10 h-10  "
             />
           )}
         </div>
@@ -62,7 +62,7 @@ function Navbar() {
         <div className="hidden md:flex contact">
           <button
             onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
-            className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-4 border-b-2 text-white font-bold text-lg"
+            className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-4 border-b-2 animate-pulse  text-white font-bold text-lg"
           >
             <MdOutlineContactPhone /> CONTACT US
           </button>

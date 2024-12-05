@@ -53,7 +53,7 @@ export default function Carousel() {
         </div>
 
         {/* Package Details */}
-        <div className="flex flex-wrap justify-center gap-8 w-full border-t md:max-w-[90%] mx-auto shadow-2xl rounded-lg border-[#00454A] p-6 animate-fadeIn bg-white">
+        <div className="flex flex-wrap justify-center gap-8 w-full border-t md:max-w-[80%] mx-auto shadow-2xl rounded-lg border-[#00454A] p-6 animate-fadeIn bg-white">
           {packageData
             ? ["double", "triple", "quad"].map((category, index) => (
                 <div
@@ -73,7 +73,9 @@ export default function Carousel() {
                     {/* Header */}
                     <div>
                       <h2 className="text-2xl text-[#D4A10F] font-bold mb-2">
-                        {`${packageData.days} Nights ${category.charAt(0).toUpperCase() + category.slice(1)} Package`}
+                        {`${packageData.days} Nights ${
+                          category.charAt(0).toUpperCase() + category.slice(1)
+                        } Package`}
                       </h2>
                       <div className="bg-[#D4A10F] text-[#00454A] text-sm font-bold px-3 py-1 rounded-full inline-block">
                         ★★★★★

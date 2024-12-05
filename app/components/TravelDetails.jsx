@@ -32,7 +32,7 @@ function TravelDetails() {
     <>
       {/* Inclusion Section */}
       <div className="w-[80%] mx-auto">
-        <h1 className="text-3xl mt-10 font-bold text-[#D4A10F]">Inclusion</h1>
+        <h1 className="text-3xl mt-10 font-serif  font-bold text-[#D4A10F]">Inclusion</h1>
         {accordionData.map((item, index) => (
           <Accordion
             key={`inclusion-${index}`}
@@ -41,10 +41,10 @@ function TravelDetails() {
             className="mb-2" // Add gap between items
           >
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-md hover:bg-yellow-500 hover:text-white hover:no-underline">
+              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-t-md hover:bg-yellow-500 hover:text-white hover:no-underline">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100 rounded-md">
+              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100  ">
                 {item.content}
               </AccordionContent>
             </AccordionItem>
@@ -63,10 +63,10 @@ function TravelDetails() {
             className="mb-2" // Add gap between items
           >
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-md hover:bg-yellow-500 hover:text-white hover:no-underline">
+              <AccordionTrigger className="text-lg font-medium py-3 px-5 text-black rounded-t-md hover:bg-yellow-500 hover:text-white hover:no-underline">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100 rounded-md">
+              <AccordionContent className="text-base pl-4 py-2 text-[#676060] bg-gray-100 leading-8 ">
                 {item.content}
               </AccordionContent>
             </AccordionItem>

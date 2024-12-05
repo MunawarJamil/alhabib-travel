@@ -12,6 +12,7 @@ import Hero from "./Hero";
 import HotelSection from "./HotelSection";
 import VideoTestimonial from "./VideoTestimonial";
 import Faqs from "./Faqs";
+import PriceCard from "./PriceCard";
 
 function HomePage() {
   const [selectedImage, setSelectedImage] = useState(
@@ -55,6 +56,9 @@ function HomePage() {
       </section>
 
       <Carousel />
+
+      {/* <PriceCard /> */}
+
       <TravelDetails />
       <About />
       <Testimonial />

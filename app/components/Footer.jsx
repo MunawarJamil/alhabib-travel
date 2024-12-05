@@ -15,7 +15,7 @@ const Icon = ({ children, label, className }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 px-5">
+    <footer className="bg-black text-gray-200 py-8 px-5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row  justify-between items-start lg:items-center">
           {/* Left Section */}
@@ -33,7 +33,7 @@ const Footer = () => {
                 <p className="text-sm">Alhabib Pilgrimage</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-6">
+            <p className="text-gray-200 text-sm leading-8">
               Al Habib Travel is the most trusted & reliable agency among UK
               Muslims. We provide bespoke Umrah travel solutions & package
               designing services to meet budget range and facilities
@@ -48,7 +48,7 @@ const Footer = () => {
               <FaPhoneAlt />
               <div>
                 <h3 className="font-bold text-lg mb-1">Call us</h3>
-                <p className="text-gray-400 text-sm">0203 504 2344</p>
+                <p className="text-gray-200 text-sm">0203 504 2344</p>
               </div>
             </Icon>
 
@@ -57,7 +57,7 @@ const Footer = () => {
               <FaEnvelope />
               <div>
                 <h3 className="font-bold text-lg mb-1">Write to us</h3>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-200 text-sm">
                   info@alhabibtravel.co.uk
                 </p>
               </div>
@@ -69,10 +69,10 @@ const Footer = () => {
               <div>
                 <h3 className="font-bold text-lg mb-1">Office</h3>
 
-                <p className="text-gray-400 text-sm leading-6">
+                <p className="text-gray-200 text-sm leading-6">
                   Office 10378 182-184
                 </p>
-                <p className="text-gray-400 text-sm leading-6">
+                <p className="text-gray-200 text-sm leading-6">
                   High Street North East Ham London England E6 2JA
                 </p>
               </div>

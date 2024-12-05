@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image'; // Importing Next.js Image component
+import React from "react";
+import Image from "next/image"; // Importing Next.js Image component
 
 function Hero() {
   return (
@@ -79,23 +79,24 @@ function Hero() {
           </div>
         </div>
       </main>
+
+      animate-slide-in-right
        */}
 
+      {/* new banner section */}
 
-       {/* new banner section */}
-
-       <main className=" hidden  lg:block  font-serif bg-gradient-to-r">
-       <div className="banner-image animate-slide-in-right">
-            <Image
-              src="/DD-Recovered.jpg"
-              alt="banner image"
-              className="w-full max-h-[100vh] object-cover "
-              width={1920}
-              height={1080}
-              priority
-            />
-          </div>
-       </main>
+      <main className=" hidden  lg:block  font-serif bg-gradient-to-r">
+        <div className="banner-image w-full h-auto ">
+          <Image
+            src="/DD-Recovered.jpg"
+            alt="banner image"
+            className="w-full object-cover "
+            width={1920}
+            height={1280}
+            priority
+          />
+        </div>
+      </main>
     </>
   );
 }
