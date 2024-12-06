@@ -54,7 +54,7 @@ export default function Carousel() {
         </div>
 
         {/* Package Details */}
-        <div className="overflow-x-auto  w-[55%] mx-auto">
+        <div className="overflow-x-auto  lg:w-[55%] mx-auto">
           <div className="flex gap-6 w-full max-w-full px-6 animate-fadeIn">
             {packageData
               ? ["double", "triple", "quad"].map((category, index) => (
