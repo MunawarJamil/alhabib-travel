@@ -56,6 +56,7 @@ function HomePage() {
       </section>
 
       <Carousel />
+      
 
       {/* <PriceCard /> */}
 

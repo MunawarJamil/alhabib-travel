@@ -6,18 +6,30 @@ import Image from "next/image";
 import { MdOutlineContactPhone } from "react-icons/md";
 import InquiryForm from "./InquiryForm";
 
+import { useRouter } from "next/navigation";
 function Navbar() {
-  const [isformOpen, setIsformOpen] = useState(false);
+  // const [isformOpen, setIsformOpen] = useState(false);
   const [toggle, isToggle] = useState(false);
+const router = useRouter()
 
+
+  
   function onToggleClick() {
     isToggle(!toggle);
   }
 
-  // Function to close the form
-  const closeForm = () => {
-    setIsformOpen(false);
+
+  const onClickedContactButton = ( ) => {
+    
+      router.push("/enquiry-form");
+   
   };
+
+
+  // Function to close the form
+  // const closeForm = () => {
+  //   setIsformOpen(false);
+  // };
 
   return (
     <>
@@ -32,7 +44,7 @@ function Navbar() {
               />
               <div className="contact">
                 <button
-                  onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
+                  onClick={onClickedContactButton} // Open InquiryForm when clicked
                   className="absolute bg-[#d4A10F] top-[6.5rem] w-[100%] left-0 py-5 text-white   font-bold text-lg flex items-center justify-center gap-3"
                 >
                   <MdOutlineContactPhone /> CONTACT US
@@ -61,7 +73,7 @@ function Navbar() {
         {/* Contact Button for Larger Screens */}
         <div className="hidden md:flex contact">
           <button
-            onClick={() => setIsformOpen(true)} // Open InquiryForm when clicked
+            onClick={onClickedContactButton} // Open InquiryForm when clicked
             className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-4 border-b-2 animate-pulse  text-white font-bold text-lg"
           >
             <MdOutlineContactPhone /> CONTACT US
@@ -70,7 +82,7 @@ function Navbar() {
       </nav>
 
       {/* Conditionally Render InquiryForm */}
-      {isformOpen && <InquiryForm closeForm={closeForm} />}
+      {/* {isformOpen && <InquiryForm closeForm={closeForm} />} */}
     </>
   );
 }

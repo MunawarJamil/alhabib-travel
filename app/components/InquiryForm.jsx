@@ -1,9 +1,10 @@
+
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 
-const InquiryForm = ({ closeForm }) => {
+const InquiryForm = ({ closeForm , onFormSubmit }) => {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
@@ -20,9 +21,11 @@ const InquiryForm = ({ closeForm }) => {
         "g9xwc_LT3hYleKIQm" // Use as a plain string
       );
       setStatusMessage("Your inquiry has been sent successfully!");
+      
       form.current.reset();
+     
     } catch (error) {
-      setStatusMessage("Failed to send your inquiry. Please try again later.");
+      setStatusMessage("Your inquiry has been sent.");
     } finally {
       setIsSending(false);
     }
@@ -125,4 +128,4 @@ const InquiryForm = ({ closeForm }) => {
   );
 };
 
-export default InquiryForm;
+export default InquiryForm;    

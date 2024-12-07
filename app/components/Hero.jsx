@@ -18,7 +18,8 @@ function Hero() {
 
       {/* Hero Section for Smaller Screens */}
       <main className="lg:hidden   items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
-        <div className="animate-slide-in-up">
+        <div className=""> 
+          {/* animate-slide-in-up */}
           <Image
             src="/banner-home.jpg"
             alt="banner image"

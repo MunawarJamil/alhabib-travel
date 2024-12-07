@@ -19,7 +19,7 @@ function About() {
 
 {/* About Section with Video */}
 
-<div className="w-[93%] lg:w-full lg:px-32   mx-auto   lg:py-16   lg:bg-gray-100  flex flex-col lg:flex-row  gap-16 items-center  ">  
+<div className="w-[93%] lg:w-full lg:px-32  mb-16 lg:mb-0 mx-auto   lg:py-16   lg:bg-gray-100  flex flex-col lg:flex-row  gap-16 items-center  ">  
   {/* Video Section */}
    <video
   src="/videoFiles/ad.mp4"
@@ -80,7 +80,7 @@ function About() {
 </div>
 
  
-<section className="text-center py-6 bg-[#00454A]  shadow-md animate-fadeIn">
+<section className=" hidden lg:flex flex-col text-center py-6 bg-[#00454A]  shadow-md animate-fadeIn">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
         Discover Destinations with Al Habib Travel
         </h1>
@@ -92,7 +92,7 @@ function About() {
 {/* about section with video  */}
 
  
-      <div className="w-[93%] lg:w-full lg:px-32   mx-auto flex  flex-col-reverse  py-8 lg:py-16 lg:grid lg:bg-gray-100 lg:grid-cols-2 gap-8 items-center  lg:flex-row-reverse animate-fadeIn">
+      <div className=" hidden w-[93%] lg:w-full lg:px-32   mx-auto    flex-col-reverse  py-8 lg:py-16 lg:grid lg:bg-gray-100 lg:grid-cols-2 gap-8 items-center  lg:flex-row-reverse animate-fadeIn">
         {/* Text Section */}
         <div className="transition-all transform lg:hover:scale-105 hover:duration-300 hover:ease-in-out">
           <h3 className="text-lg text-[#D4A10F] animate-fadeIn">AL HABIB TRAVEL LTD</h3>
