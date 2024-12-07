@@ -14,7 +14,7 @@ import VideoTestimonial from "./VideoTestimonial";
 import Faqs from "./Faqs";
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-
+import { Suspense } from "react";
 function HomePage() {
   const carouselRef = useRef(null); // Reference for the Carousel section
   const searchParams = useSearchParams(); // Access query parameters
@@ -66,10 +66,12 @@ function HomePage() {
         </div>
       </section>
 
-        {/* Add a ref to the Carousel */}
-      <div ref={carouselRef}>
-        <Carousel />
-      </div>
+      {/* Add a ref to the Carousel */}
+      <Suspense>
+        <div ref={carouselRef}>
+          <Carousel />
+        </div>
+      </Suspense>
       {/* <PriceCard /> */}
 
       <TravelDetails />
