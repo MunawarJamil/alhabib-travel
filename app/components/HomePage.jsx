@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import Carousel from "./Carousel";
+import { useState } from "react"; 
 import Footer from "./Footer";
 import TravelDetails from "./TravelDetails";
 import About from "./About";
@@ -11,25 +10,14 @@ import Testimonial from "./Testimonial";
 import Hero from "./Hero";
 import HotelSection from "./HotelSection";
 import VideoTestimonial from "./VideoTestimonial";
-import Faqs from "./Faqs";
-import { useEffect, useRef } from "react";
-import { useSearchParams } from "next/navigation";
+import Faqs from "./Faqs"; 
 import { Suspense } from "react";
+import PriceCard from "./PriceCard";
 function HomePage() {
-  const carouselRef = useRef(null); // Reference for the Carousel section
-  const searchParams = useSearchParams(); // Access query parameters
-
   const [selectedImage, setSelectedImage] = useState(
     "/desktopImages/Snood-Big-Hotel.webp"
   );
-  useEffect(() => {
-    // Check for the "scroll" query parameter
-    const scrollParam = searchParams.get("scroll");
-    if (scrollParam === "carousel" && carouselRef.current) {
-      carouselRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [searchParams]);
-
+ 
   return (
     <>
       <Hero />
@@ -68,9 +56,7 @@ function HomePage() {
 
       {/* Add a ref to the Carousel */}
       <Suspense>
-        <div ref={carouselRef}>
-          <Carousel />
-        </div>
+       <PriceCard/>
       </Suspense>
       {/* <PriceCard /> */}
 
