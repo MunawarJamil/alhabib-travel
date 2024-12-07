@@ -19,7 +19,7 @@ function HotelSection() {
   );
 
   const [activeTab, setActiveTab] = useState("makkah");
-  const [activeHotel, setActiveHotel] = useState("emaarKhalilMakkah");  
+  const [activeHotel, setActiveHotel] = useState("emaarKhalilMakkah");
 
   return (
     <section className="w-full md:w-[70%] mx-auto md:mt-32">
@@ -44,12 +44,11 @@ function HotelSection() {
               onClick={() => setActiveTab("madina")}
             />
 
-<DropdownButton
+            <DropdownButton
               label="Transport"
               isActive={activeTab === "Transport"}
               onClick={() => setActiveTab("Transport")}
             />
-
 
             <DropdownButton
               label="Food"
@@ -256,21 +255,18 @@ function HotelSection() {
           </div>
         )}
 
-
-
-
-{activeTab === "Transport" && (
+        {activeTab === "Transport" && (
           <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
             <span className="font-bold text-xl text-[#00454A]">
-              Explore   transport Options
+              Explore transport Options
             </span>
             <div className="py-2 text-gray-500">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, accusantium ratione sunt nobis ex quisquam maiores praesentium hic nisi eaque, molestias, perferendis perspiciatis voluptates at! Facere illum laboriosam ea corrupti!
-                Aliquid natus neque asperiores temporibus beatae velit ipsam nam ratione suscipit ab quis illum accusamus, dignissimos nesciunt voluptas explicabo, incidunt officia quia architecto. Libero, voluptatum nihil itaque temporibus laborum debitis.
-                Dicta deserunt quaerat magnam dolor error optio et ipsum neque enim nulla eaque minima, temporibus tenetur repellat sunt iste molestias reprehenderit! Voluptates illum accusamus sit quas, temporibus iusto. Dolores, rem?
-                Ea dolore nisi temporibus vel consequuntur quam facere repudiandae pariatur sed. Sint expedita ratione ipsam tenetur alias iusto enim, in reprehenderit totam vitae assumenda minima sit neque odio tempore debitis!
-                
+                Transport: Our driver will pick you up at Jeddah airport, take
+                you to your Makkah hotel, then to Madinah, and finally to the
+                airport for departure. Enjoy private transport and a friendly
+                guide for Ziyarats in both cities. Comfort and care, every step
+                of the way!
               </p>
             </div>
           </div>

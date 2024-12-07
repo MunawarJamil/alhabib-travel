@@ -28,12 +28,9 @@ const InquiryForm = () => {
       localStorage.setItem("formFilled", "true");
       setStatusMessage("Your inquiry has been sent successfully!");
       form.current.reset();
-       setTimeout(() => {
-        
-        router.push("/");
-       }, 1500);
-
-       
+      setTimeout(() => {
+        router.push("/?scroll=carousel");
+      }, 1500);
     } catch (error) {
       setStatusMessage("Failed to send your inquiry. Please try again!");
     } finally {
@@ -62,7 +59,9 @@ const InquiryForm = () => {
               className="mx-auto mb-2"
             />
             <h2 className="text-lg font-semibold">Send your message</h2>
-            <p className="text-sm text-gray-600">Our team will get in touch with you.</p>
+            <p className="text-sm text-gray-600">
+              Our team will get in touch with you.
+            </p>
           </div>
           <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4">

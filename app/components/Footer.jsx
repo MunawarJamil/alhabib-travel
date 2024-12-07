@@ -15,17 +15,17 @@ const Icon = ({ children, label, className }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-200 py-8 px-5">
+    <footer className="bg-[#00454A] text-gray-200 py-8 px-5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row  justify-between items-start lg:items-center">
           {/* Left Section */}
           <div className="mb-6 lg:mb-0 lg:w-1/3">
             <div className="flex items-center mb-4">
               <Image
-                src="/logo.webp"
+                src="/logo22.png"
                 alt="Al Habib Travel Logo"
-                width={80} // Equivalent to Tailwind's w-20 (20 * 4 = 80px)
-                height={80} // Equivalent to Tailwind's h-20 (20 * 4 = 80px)
+                width={100} // Equivalent to Tailwind's w-20 (20 * 4 = 80px)
+                height={100} // Equivalent to Tailwind's h-20 (20 * 4 = 80px)
                 className="mr-3"
               />
               <div>
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
+        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-[#D4A10F] text-sm  ">
           <span className="font-bold">Note: </span>All fares advertised are
           subject to availability and start from the prices we have mentioned.
           Fares are only guaranteed until ticketed. Offers may be withdrawn

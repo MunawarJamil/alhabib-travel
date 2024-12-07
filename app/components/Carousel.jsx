@@ -14,12 +14,17 @@ export default function Carousel() {
 
   const packages = [
     { name: "7 Nights Package", image: "/PricingCards/7 Nights .jpg" },
-    { name: "14 Nights Package", image: "/PricingCards/14 nights 3 star copy.jpg" },
+    {
+      name: "14 Nights Package",
+      image: "/PricingCards/14 nights 3 star copy.jpg",
+    },
     { name: "10 Nights Package", image: "/PricingCards/10 nights.jpg" },
   ];
 
   const [activeMonth, setActiveMonth] = useState("Jan-2025");
-  const [showPrice, setShowPrice] = useState(Array(packages.length).fill(false));
+  const [showPrice, setShowPrice] = useState(
+    Array(packages.length).fill(false)
+  );
   const [formFilled, setFormFilled] = useState(false);
   const router = useRouter();
 
@@ -44,7 +49,9 @@ export default function Carousel() {
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
           AL HABIB TOURS & TRAVELS PVT. LTD.
         </h1>
-        <h2 className="text-xl font-bold mt-2 text-white">UMRAH PACKAGES 2025</h2>
+        <h2 className="text-xl font-bold mt-2 text-white">
+          UMRAH PACKAGES 2025
+        </h2>
       </header>
 
       <div className="p-6 bg-gray-100 py-20">
@@ -80,23 +87,21 @@ export default function Carousel() {
                 alt={pkg.name}
                 className="object-cover w-full"
               />
-            
-              {showPrice[index] ?(
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2   hover:bg-[#D4A10F] text-white px-12 w-full py-5 text-xl   bg-[#00454A] transition">
-                  Price: {months.find((m) => m.name === activeMonth)?.prices[index] || ""}
-                </div>
-              ): 
-              
+
               <button
-              onClick={() => toggleShowPrice(index)}
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2   hover:bg-[#D4A10F] text-white px-12 w-full py-5 text-xl   bg-[#00454A] transition"
-            >
-              View Price
-            </button>
-              
-              
-              
-              }
+                onClick={() => toggleShowPrice(index)}
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2     hover:text-[#D4A10F] text-white px-12 w-full py-5 text-xl font-bold  bg-[#00454A] transition"
+              >
+                 {showPrice[index] ? ("Hide"): "View Price"}
+              </button>
+
+              {showPrice[index] && (
+                <div className="absolute bottom-16 left-1/2 text-center transform -translate-x-1/2    bg-[#D4A10F] text-white px-12 w-full py-4 text-xl   font-bold  transition">
+                  Price:{" "}
+                  {months.find((m) => m.name === activeMonth)?.prices[index] ||
+                    ""}
+                </div>
+              )}
             </div>
           ))}
         </div>
