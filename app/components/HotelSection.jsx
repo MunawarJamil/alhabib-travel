@@ -1,6 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
+import {
+  EmaarHotel,
+  AnjumHotel,
+  GoldenHotel,
+  Transport,
+  PullmanHotel,
+  OdestHotel,
+  EmaarGrandHotel,
+} from "./ImagesGalary";
+import { TransportService } from "../data/images";
 
 function HotelSection() {
   // Reusable Dropdown Button Component
@@ -60,93 +70,114 @@ function HotelSection() {
 
         {/* Makkah Tab */}
         {activeTab === "makkah" && (
-          <div className=" p-5   hover:shadow-2xl transition-transform duration-300  ">
-            <div className="overflow-x-auto whitespace-nowrap flex gap-3">
-              <button
-                className={`  px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2  ${
-                  activeHotel === "emaarKhalilMakkah"
-                    ? "bg-[#00454A] text-white font-bold"
-                    : ""
-                }`}
-                onClick={() => setActiveHotel("emaarKhalilMakkah")}
-              >
-                Emaar Al Khalil Makkah
-              </button>
-              <button
-                className={`px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2 ${
-                  activeHotel === "emaarGrandMakkah"
-                    ? "bg-[#00454A] text-white font-bold"
-                    : ""
-                }`}
-                onClick={() => setActiveHotel("emaarGrandMakkah")}
-              >
-                Emaar Grand Makkah Hotel
-              </button>
-              <button
-                className={`px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2 ${
-                  activeHotel === "anjumMakkah"
-                    ? "bg-[#00454A] text-white font-bold"
-                    : ""
-                }`}
-                onClick={() => setActiveHotel("anjumMakkah")}
-              >
-                Anjum Makkah
-              </button>
+          <>
+            <div className=" p-5   hover:shadow-2xl transition-transform duration-300  ">
+              <div className="overflow-x-auto whitespace-nowrap flex gap-3">
+                <button
+                  className={`  px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2  ${
+                    activeHotel === "emaarKhalilMakkah"
+                      ? "bg-[#00454A] text-white font-bold"
+                      : ""
+                  }`}
+                  onClick={() => setActiveHotel("emaarKhalilMakkah")}
+                >
+                  Emaar Al Khalil Makkah
+                </button>
+                <div></div>
+
+                <button
+                  className={`px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2 ${
+                    activeHotel === "emaarGrandMakkah"
+                      ? "bg-[#00454A] text-white font-bold"
+                      : ""
+                  }`}
+                  onClick={() => setActiveHotel("emaarGrandMakkah")}
+                >
+                  Emaar Grand Makkah Hotel
+                </button>
+                <button
+                  className={`px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2 ${
+                    activeHotel === "anjumMakkah"
+                      ? "bg-[#00454A] text-white font-bold"
+                      : ""
+                  }`}
+                  onClick={() => setActiveHotel("anjumMakkah")}
+                >
+                  Anjum Makkah
+                </button>
+              </div>
             </div>
 
             {/* Hotel Details */}
             {activeHotel === "emaarKhalilMakkah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Emaar Al Khalil Makkah
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Emaar Al Khalil is ideally located on Ibrahim Khalil Street,
-                    just 400 meters from Haram Sharif...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Ibrahim Al Khalil Street, Makkah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A] px-5">
+                    Emaar Al Khalil Makkah
+                  </span>
+                  <div className="py-2 px-5 text-gray-500">
+                    <p>
+                      Emaar Al Khalil is ideally located on Ibrahim Khalil
+                      Street, just 400 meters from Haram Sharif...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Ibrahim Al Khalil Street, Makkah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+                <EmaarHotel />
+              </>
             )}
+
             {activeHotel === "emaarGrandMakkah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Emaar Grand Makkah Hotel
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Experience comfort at Emaar Grand Makkah Hotel, a 4-star
-                    hotel just 4-5 minutes’ walk to Haram...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Ibrahim Al Khalil Street, Makkah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A]">
+                    Emaar Grand Makkah Hotel
+                  </span>
+                  <div className="py-2 text-gray-500">
+                    <p>
+                      Experience comfort at Emaar Grand Makkah Hotel, a 4-star
+                      hotel just 4-5 minutes’ walk to Haram...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Ibrahim Al Khalil Street, Makkah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+                <EmaarGrandHotel />
+              </>
             )}
             {activeHotel === "anjumMakkah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Anjum Makkah
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Anjum Makkah is a 2-minute walk from Masjid Al Haram
-                    offering modern accommodations...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Umm Al Qura Street, Makkah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A]">
+                    Anjum Makkah
+                  </span>
+                  <div className="py-2 text-gray-500">
+                    <p>
+                      Anjum Makkah is a 2-minute walk from Masjid Al Haram
+                      offering modern accommodations...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Umm Al Qura Street, Makkah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+
+                <AnjumHotel />
+              </>
             )}
-          </div>
+          </>
         )}
 
         {/* Madinah Tab */}
@@ -187,55 +218,73 @@ function HotelSection() {
 
             {/* Hotel Details */}
             {activeHotel === "odstMadinah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Odst Al Madinah
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Odst Al Madinah is just 150 meters from the Prophet’s Mosque
-                    offering unmatched convenience...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Madinah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A]">
+                    Odst Al Madinah
+                  </span>
+                  <div className="py-2 text-gray-500">
+                    <p>
+                      Odst Al Madinah is just 150 meters from the Prophet’s
+                      Mosque offering unmatched convenience...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Madinah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+
+                <OdestHotel />
+              </>
             )}
+
             {activeHotel === "goldenTulipMadinah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Golden Tulip Al Mektan Madinah Hotel
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Golden Tulip Al Mektan, just 200 meters from Haram Sharif,
-                    offers stunning views...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Madinah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A]">
+                    Golden Tulip Al Mektan Madinah Hotel
+                  </span>
+                  <div className="py-2 text-gray-500">
+                    <p>
+                      Golden Tulip Al Mektan, just 200 meters from Haram Sharif,
+                      offers stunning views...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Madinah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+
+                <GoldenHotel />
+              </>
             )}
             {activeHotel === "pullmanMadinah" && (
-              <div className="py-5">
-                <span className="font-bold text-lg text-[#00454A]">
-                  Pullman Zam Zam Madinah
-                </span>
-                <div className="py-2 text-gray-500">
-                  <p>
-                    Pullman Zam Zam is just 100 meters from Bab Al Salam
-                    offering unparalleled convenience...
-                  </p>
-                  <p>
-                    <span className="font-bold text-[#d4A10F]">Location:</span>{" "}
-                    Madinah, Saudi Arabia
-                  </p>
+              <>
+                <div className="py-5">
+                  <span className="font-bold text-lg text-[#00454A]">
+                    Pullman Zam Zam Madinah
+                  </span>
+                  <div className="py-2 text-gray-500">
+                    <p>
+                      Pullman Zam Zam is just 100 meters from Bab Al Salam
+                      offering unparalleled convenience...
+                    </p>
+                    <p>
+                      <span className="font-bold text-[#d4A10F]">
+                        Location:
+                      </span>{" "}
+                      Madinah, Saudi Arabia
+                    </p>
+                  </div>
                 </div>
-              </div>
+                <PullmanHotel />
+              </>
             )}
           </div>
         )}
@@ -256,20 +305,24 @@ function HotelSection() {
         )}
 
         {activeTab === "Transport" && (
-          <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
-            <span className="font-bold text-xl text-[#00454A]">
-              Explore transport Options
-            </span>
-            <div className="py-2 text-gray-500">
-              <p>
-                Transport: Our driver will pick you up at Jeddah airport, take
-                you to your Makkah hotel, then to Madinah, and finally to the
-                airport for departure. Enjoy private transport and a friendly
-                guide for Ziyarats in both cities. Comfort and care, every step
-                of the way!
-              </p>
+          <>
+            <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
+              <span className="font-bold text-xl text-[#00454A]">
+                Explore transport Options
+              </span>
+              <div className="py-2 text-gray-500">
+                <p>
+                  Transport: Our driver will pick you up at Jeddah airport, take
+                  you to your Makkah hotel, then to Madinah, and finally to the
+                  airport for departure. Enjoy private transport and a friendly
+                  guide for Ziyarats in both cities. Comfort and care, every
+                  step of the way!
+                </p>
+              </div>
+
+              <Transport />
             </div>
-          </div>
+          </>
         )}
       </div>
     </section>

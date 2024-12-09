@@ -3,8 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GiTireIronCross } from "react-icons/gi";
 import { useState } from "react";
 import Image from "next/image";
-import { MdOutlineContactPhone } from "react-icons/md";
-import InquiryForm from "./InquiryForm";
+import { MdOutlineContactPhone } from "react-icons/md"; 
 
 import { useRouter } from "next/navigation";
 function Navbar() {

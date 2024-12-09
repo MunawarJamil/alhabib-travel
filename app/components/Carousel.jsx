@@ -5,42 +5,154 @@ import { useRouter } from "next/navigation";
 
 export default function Carousel() {
   const months = [
-    { name: "Jan-2025", prices: ["$1040", "$2040", "$3040"] },
-    { name: "Feb-2025", prices: ["$1940", "$2940", "$3940"] },
-    { name: "Ramadan 2025", prices: ["$840", "$1840", "$2840"] },
-    { name: "Apr-2025", prices: ["$1440", "$2440", "$3440"] },
-    { name: "May-2025", prices: ["$1465", "$2465", "$3465"] },
-  ];
-
-  const packages = [
-    { name: "7 Nights Package", image: "/PricingCards/7 Nights .jpg" },
     {
-      name: "14 Nights Package",
-      image: "/PricingCards/14 nights 3 star copy.jpg",
+      name: "Jan-2025",
+      days: ["7-days", "10-days", "14-days"],
+      images: {
+        "7-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+        "10-days": [
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+        ],
+        "14-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/14_Nights.jpg",
+        ],
+      },
+      prices: [100, 120, 150],
     },
-    { name: "10 Nights Package", image: "/PricingCards/10 nights.jpg" },
+
+    {
+      name: "Feb-2025",
+      days: ["7-days", "10-days", "14-days"],
+      images: {
+        "7-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+        "10-days": [
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+        ],
+        "14-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+      },
+      prices: [100, 120, 150],
+    },
+    {
+      name: "Ramadan-2025",
+      days: ["7-days", "10-days", "14-days"],
+      images: {
+        "7-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+        "10-days": [
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+        ],
+        "14-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/14_Nights.jpg",
+        ],
+      },
+      prices: [100, 120, 150],
+    },
+
+    {
+      name: "May-2025",
+      days: ["7-days", "10-days", "14-days"],
+      images: {
+        "7-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+        "10-days": [
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+        ],
+        "14-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/14_Nights.jpg",
+        ],
+      },
+      prices: [100, 120, 150],
+    },
+
+    {
+      name: "Apr-2025",
+      days: ["7-days", "10-days", "14-days"],
+      images: {
+        "7-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+        ],
+        "10-days": [
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+        ],
+        "14-days": [
+          "/PricingCards/7_Nights.jpg",
+          "/PricingCards/10_Nights.jpg",
+          "/PricingCards/14_Nights.jpg",
+        ],
+      },
+      prices: [100, 120, 150],
+    },
   ];
 
-  const [activeMonth, setActiveMonth] = useState("Jan-2025");
-  const [showPrice, setShowPrice] = useState(
-    Array(packages.length).fill(false)
-  );
-  const [formFilled, setFormFilled] = useState(false);
+  const [activeMonth, setActiveMonth] = useState(months[0].name);
+  const [selectedPackage, setSelectedPackage] = useState("7-days");
+  const [showPrice, setShowPrice] = useState({});
   const router = useRouter();
+  const [isInquiryFilled, setIsInquiryFilled] = useState(false);
 
   useEffect(() => {
-    const isFormFilled = localStorage.getItem("formFilled") === "true";
-    setFormFilled(isFormFilled);
+    const inquiryStatus = localStorage.getItem("inquiryFilled") === "true";
+    setIsInquiryFilled(inquiryStatus);
   }, []);
 
-  const toggleShowPrice = (index) => {
-    if (formFilled) {
-      setShowPrice((prev) =>
-        prev.map((state, i) => (i === index ? !state : false))
-      );
-    } else {
+  const handlePackageSelection = (days) => {
+    setSelectedPackage(days);
+  };
+
+  const handleViewPrice = (index) => {
+    if (!isInquiryFilled) {
       router.push("/enquiry-form");
+      return;
     }
+    setShowPrice((prevState) => ({
+      ...prevState,
+      [index]: true,
+    }));
+  };
+
+  const handleBookNow = () => {
+    alert("Redirecting to booking page..."); // Replace with actual booking redirection
+  };
+
+  const getImagesForSelectedMonth = (month) => {
+    const monthData = months.find((m) => m.name === month);
+    return monthData ? monthData.images[selectedPackage] : [];
   };
 
   return (
@@ -60,10 +172,7 @@ export default function Carousel() {
             {months.map((month) => (
               <div
                 key={month.name}
-                onClick={() => {
-                  setActiveMonth(month.name);
-                  setShowPrice(Array(packages.length).fill(false));
-                }}
+                onClick={() => setActiveMonth(month.name)}
                 className={`cursor-pointer py-2 px-6 md:py-4 md:px-8 text-center rounded-sm shadow-md transition-transform duration-300 ease-out transform ${
                   activeMonth === month.name
                     ? "bg-[#00454A] text-white font-bold"
@@ -76,35 +185,66 @@ export default function Carousel() {
           </div>
         </div>
 
-        <div className="flex lg:justify-center gap-7 overflow-x-auto ml-2">
-          {packages.map((pkg, index) => (
-            <div
-              key={pkg.name}
-              className="relative shadow-md rounded-md overflow-hidden bg-white flex-shrink-0 w-full sm:w-auto"
-            >
-              <img
-                src={pkg.image}
-                alt={pkg.name}
-                className="object-cover w-full"
-              />
-
-              <button
-                onClick={() => toggleShowPrice(index)}
-                className="absolute bottom-0 left-1/2 transform -translate-x-1/2     hover:text-[#D4A10F] text-white px-12 w-full py-5 text-xl font-bold  bg-[#00454A] transition"
-              >
-                 {showPrice[index] ? ("Hide"): "View Price"}
-              </button>
-
-              {showPrice[index] && (
-                <div className="absolute bottom-16 left-1/2 text-center transform -translate-x-1/2    bg-[#D4A10F] text-white px-12 w-full py-4 text-xl   font-bold  transition">
-                  Price:{" "}
-                  {months.find((m) => m.name === activeMonth)?.prices[index] ||
-                    ""}
-                </div>
-              )}
+        {activeMonth && (
+          <>
+            <div className="flex flex-col lg:flex-row gap-3">
+              <div className="flex overflow-x-auto mx-auto lg:w-[64%] gap-3">
+                {months
+                  .find((month) => month.name === activeMonth)
+                  ?.days.map((day) => (
+                    <button
+                      key={day}
+                      onClick={() => handlePackageSelection(day)}
+                      className={`w-24 h-16 border border-gray-300 rounded-md ${
+                        selectedPackage === day
+                          ? "bg-[#00454A] text-white"
+                          : "bg-white text-black"
+                      }`}
+                    >
+                      {day.split("-")[0]} Days
+                    </button>
+                  ))}
+              </div>
             </div>
-          ))}
-        </div>
+
+            <div className="flex flex-col lg:flex-row overflow-x-auto justify-center mt-10 gap-3">
+              <div className="flex lg:grid lg:grid-cols-3 gap-3 lg:justify-center mt-6 lg:mt-0">
+                {getImagesForSelectedMonth(activeMonth).map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative shadow-md rounded-md bg-white flex-shrink-0 w-full sm:w-auto sm:flex-none lg:w-auto"
+                    style={{ minWidth: "100%" }}
+                  >
+                    <img
+                      src={image}
+                      alt={`Package ${index + 1}`}
+                      className="object-cover w-full lg:h-[33rem]"
+                    />
+
+                    <button
+                      onClick={() => handleViewPrice(index)}
+                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 hover:text-[#D4A10F] text-white px-12 w-full py-3 text-xl bg-[#00454A] transition"
+                    >
+                      {showPrice[index] ? "Book Now" : "View Price"}
+                    </button>
+
+                    {showPrice[index] && (
+                      <div
+                        onClick={handleBookNow}
+                        className="absolute bottom-[3.2rem] left-1/2 text-center transform -translate-x-1/2 bg-[#D4A10F] text-white px-12 w-full py-2 text-xl transition cursor-pointer"
+                      >
+                        Price:{" "}
+                        {months.find((m) => m.name === activeMonth)?.prices[
+                          index
+                        ] || ""}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </>
   );

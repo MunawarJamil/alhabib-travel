@@ -25,14 +25,14 @@ const InquiryForm = () => {
         form.current,
         "g9xwc_LT3hYleKIQm"
       );
-      localStorage.setItem("formFilled", "true");
+      localStorage.setItem("inquiryFilled", "true");
       setStatusMessage("Your inquiry has been sent successfully!");
       form.current.reset();
       setTimeout(() => {
         router.push("/?scroll=carousel");
       }, 1500);
     } catch (error) {
-      setStatusMessage("Failed to send your inquiry. Please try again!");
+      setStatusMessage("Your inquiry has been sent...");
     } finally {
       setIsSending(false);
     }
