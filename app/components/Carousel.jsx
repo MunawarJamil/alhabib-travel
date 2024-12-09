@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 export default function Carousel() {
   const months = [
     {
@@ -50,6 +50,7 @@ export default function Carousel() {
       },
       prices: [100, 120, 150],
     },
+
     {
       name: "Ramadan-2025",
       days: ["7-days", "10-days", "14-days"],
@@ -215,10 +216,12 @@ export default function Carousel() {
                     className="relative shadow-md rounded-md bg-white flex-shrink-0 w-full sm:w-auto sm:flex-none lg:w-auto"
                     style={{ minWidth: "100%" }}
                   >
-                    <img
+                    <Image
                       src={image}
                       alt={`Package ${index + 1}`}
                       className="object-cover w-full lg:h-[33rem]"
+                      width={1200} // Adjust to your image's actual width
+                      height={528} // Adjust to maintain the aspect ratio of 33rem height (based on your layout)
                     />
 
                     <button
