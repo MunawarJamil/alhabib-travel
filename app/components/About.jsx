@@ -39,7 +39,7 @@ function About() {
         </div>
 
         {/* Text Section */}
-        <div className="transition-all transform lg:scale-105 hover:duration-300 lg:hover:ease-in-out">
+        <div className="transition-all transform md:scale-105 hover:duration-300 lg:hover:ease-in-out">
           <h3 className="text-lg text-[#D4A10F] animate-fadeIn">
             DISCOVER AL HABIB
           </h3>
@@ -92,12 +92,12 @@ function About() {
           <h3 className="text-lg text-[#D4A10F] animate-fadeIn">
             AL HABIB TRAVEL LTD
           </h3>
-          <h1 className="text-2xl font-bold animate-fadeIn animate-delay-300">
+          <h1 className="text-2xl font-bold  ">
             Collect moments <span className="text-[#D4A10F]">crafted</span> with
             perfection
           </h1>
 
-          <p className="py-3 text-slate-600 leading-8 animate-fadeIn animate-delay-500">
+          <p className="py-3 text-gray-700 leading-8 ">
             Al Habib Travel UK is a trusted travel agency for Muslims from
             British, European, Asian, and African communities living in the
             United Kingdom. With offices in London and Manchester, we offer Hajj
