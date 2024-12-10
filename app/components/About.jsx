@@ -24,7 +24,7 @@ function About() {
       <div className="w-[93%] lg:w-full lg:px-32  mb-16 lg:mb-0 mx-auto   lg:py-16   lg:bg-gray-100  flex flex-col lg:flex-row  gap-16 items-center  ">
         {/* Video Section */}
 
-        <div className="w-full    md:w-[20rem] lg:w-full flex flex-col bg-gray-100 rounded-lg">
+        <div className="w-full    md:w-[20rem] lg:w-[80%] flex flex-col bg-gray-100 rounded-lg">
           <video
             src="/videoFiles/ad.mp4"
             className="w-full rounded-t-lg object-contain"
@@ -39,15 +39,13 @@ function About() {
         </div>
 
         {/* Text Section */}
-        <div className="transition-all transform md:scale-105 hover:duration-300 lg:hover:ease-in-out">
-          <h3 className="text-lg text-[#D4A10F] animate-fadeIn">
-            DISCOVER AL HABIB
-          </h3>
-          <h1 className="text-2xl font-bold animate-fadeIn animate-delay-300">
+        <div className="     lg:hover:ease-in-out">
+          <h3 className="text-lg text-[#D4A10F]  ">DISCOVER AL HABIB</h3>
+          <h1 className="text-2xl font-bold  ">
             Experience <span className="text-[#D4A10F]">comfort</span> and care
           </h1>
 
-          <p className="py-3 text-slate-600 leading-8 animate-fadeIn animate-delay-500">
+          <p className="py-3 text-slate-600 leading-8  ">
             Welcome to Al Habib Travel UK, where journeys are tailored to
             perfection. Serving individuals and families from across the UK, we
             ensure that every Hajj or Umrah pilgrimage is designed with your

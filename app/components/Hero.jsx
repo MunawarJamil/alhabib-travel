@@ -5,7 +5,7 @@ function Hero() {
   return (
     <>
       {/* Hero Section for Smaller Screens */}
-      <main className="lg:hidden   relative top-[-27] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
+      <main className="lg:hidden   relative top-[-37] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
         <div className="">
           {/* animate-slide-in-up */}
           <Image
@@ -19,8 +19,8 @@ function Hero() {
         </div>
       </main>
 
-      <main className=" relative hidden top-[-25] lg:block  font-serif bg-gradient-to-r">
-        <div className="banner-image w-full h-auto ">
+      <main className=" relative hidden top-[-37] lg:block  font-serif bg-gradient-to-r">
+        <div className="banner-image w-full h-auto relative top-0 ">
           <Image
             src="/DD-Recovered.jpg"
             alt="banner image"
