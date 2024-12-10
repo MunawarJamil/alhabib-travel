@@ -209,7 +209,7 @@ export function Transport() {
   );
   return (
     <section className="w-full   mx-auto">
-      <div className="flex flex-col lg:flex-row gap-5 p-5">
+      <div className="flex flex-col lg:flex-row gap-5 p-1 mt-7">
         {/* Thumbnail Images */}
         <div className="flex overflow-x-auto lg:flex-col md:overflow-y-auto gap-3">
           {TransportService.map((image, index) => (

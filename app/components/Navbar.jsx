@@ -7,7 +7,7 @@ import { MdOutlineContactPhone } from "react-icons/md";
 
 import { useRouter } from "next/navigation";
 function Navbar() {
-  // const [isformOpen, setIsformOpen] = useState(false);
+  
   const [toggle, isToggle] = useState(false);
 const router = useRouter()
 
@@ -24,17 +24,19 @@ const router = useRouter()
    
   };
 
+  const gotoHomePage = ( ) => {
+    
+    router.push("/");
+ 
+};
 
-  // Function to close the form
-  // const closeForm = () => {
-  //   setIsformOpen(false);
-  // };
+ 
 
   return (
     <>
-      <nav className="w-full py-3 flex  justify-between relative items-center bg-slate-100 bg-gradient-to-  from-[#0c091d] via-[#0e5243] to-[#093833]  shadow-xl  px-10 md:px-32">
+      <nav className="w-full py-2 flex  justify-between relative items-center bg-slate-100 bg-gradient-to-  from-[#0c091d] via-[#0e5243] to-[#093833]  shadow-xl  px-10 md:px-32">
         {/* Toggle Buttons */}
-        <div className="md:hidden">
+        <div className="md:hidden mt-4">
           {toggle ? (
             <>
               <GiTireIronCross
@@ -44,7 +46,7 @@ const router = useRouter()
               <div className="contact">
                 <button
                   onClick={onClickedContactButton} // Open InquiryForm when clicked
-                  className="absolute bg-[#d4A10F] top-[6.5rem] w-[100%] left-0 py-5 text-white   font-bold text-lg flex items-center justify-center gap-3"
+                  className="absolute bg-[#d4A10F] top-[5rem] w-[100%] left-0 py-3 text-white   font-bold text-lg flex items-center justify-center gap-3"
                 >
                   <MdOutlineContactPhone /> CONTACT US
                 </button>
@@ -59,12 +61,13 @@ const router = useRouter()
         </div>
 
         {/* Logo */}
-        <div>
+        <div className="cursor-pointer">
           <Image
+          onClick={gotoHomePage}
             src="/logo.webp"
             alt="Logo"
-            width={100} // Adjust width as needed
-            height={50} // Adjust height as needed
+            width={80} // Adjust width as needed
+            height={1200} // Adjust height as needed
             className="object-contain"
           />
         </div>
@@ -73,7 +76,7 @@ const router = useRouter()
         <div className="hidden md:flex contact">
           <button
             onClick={onClickedContactButton} // Open InquiryForm when clicked
-            className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-4 border-b-2 animate-pulse  text-white font-bold text-lg"
+            className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-3 border-b-2 animate-pulse  text-white font-bold text-lg"
           >
             <MdOutlineContactPhone /> CONTACT US
           </button>

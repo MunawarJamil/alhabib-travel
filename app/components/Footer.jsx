@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-[#D4A10F] text-sm  ">
+        <div className="border-t border-gray-700 mt-8 leading-normal pt-4 md:text-center text-[#D4A10F] text-sm  ">
           <span className="font-bold">Note: </span>All fares advertised are
           subject to availability and start from the prices we have mentioned.
           Fares are only guaranteed until ticketed. Offers may be withdrawn

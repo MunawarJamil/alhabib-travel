@@ -18,7 +18,7 @@ function VideoTestimonial() {
         {videoData.map((item, index) => (
           <video
             key={index} // Add a unique key for each video
-            className="w-[90%] md:w-[60%] lg:w-[45%] h-96 object-contain rounded-lg"
+            className="w-[90%]  md:w-[40%] h-96 object-contain rounded-lg"
             src={item.videoLink} // Correctly use item.videoLink
             controls
           ></video>

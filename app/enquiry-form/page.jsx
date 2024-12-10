@@ -40,9 +40,11 @@ const InquiryForm = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] h-[100vh]">
-        <div className="bg-white p-6 md:rounded-lg max-w-sm md:max-w-xl md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative h-[100vh] md:h-auto md:top-32">
+      <div className="hidden lg:sticky top-0">
+        <Navbar />
+      </div>
+      <div className="bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] h-screen">
+        <div className="bg-white p-6 md:rounded-lg max-w-sm md:max-w-xl md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative h-[100vh] md:h-auto md:top-20">
           <button
             onClick={() => router.push("/")}
             className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
@@ -51,22 +53,22 @@ const InquiryForm = () => {
             <FaTimes size={20} />
           </button>
           <div className="text-center mb-4">
-            <Image
-              src="/logo.webp"
-              alt="Logo"
-              width={64}
-              height={64}
-              className="mx-auto mb-2"
-            />
-            <h2 className="text-lg font-semibold">Send your message</h2>
-            <p className="text-sm text-gray-600">
-              Our team will get in touch with you.
-            </p>
+<Image
+  src="/logo.webp"
+  alt="Logo"
+  width={64}
+  height={64}
+  className="mx-auto my-2"
+/>
+<h2 className="text-lg font-semibold my-2">Get Your Umrah Qoute!</h2>
+<p className="text-sm text-gray-600">
+  We willcontact you via whatsApp or email within minutes.
+</p>
           </div>
           <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium">
-                Your Name
+                Passanger Name
               </label>
               <input
                 type="text"
@@ -80,21 +82,21 @@ const InquiryForm = () => {
 
             <div className="mb-4">
               <label htmlFor="mobile" className="block text-sm font-medium">
-                Mobile Number
+                Contact Number
               </label>
               <input
                 type="tel"
                 id="mobile"
                 name="from_phone"
                 className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
-                placeholder="Mobile number with country code e.g., +92"
+                placeholder="Enter your ph:number +92"
                 required
               />
             </div>
 
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium">
-                Your Email
+              Email Address
               </label>
               <input
                 type="email"

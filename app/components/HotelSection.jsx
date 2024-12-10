@@ -32,7 +32,7 @@ function HotelSection() {
   const [activeHotel, setActiveHotel] = useState("emaarKhalilMakkah");
 
   return (
-    <section className="w-full md:w-[70%] mx-auto md:mt-32">
+    <section className="w-full md:w-[70%] mx-auto md:mt-10">
       <div>
         <div className="p-5">
           <p className="text-[#d4A10F] text-2xl">Your Comfort, Our Priority</p>
@@ -71,7 +71,7 @@ function HotelSection() {
         {/* Makkah Tab */}
         {activeTab === "makkah" && (
           <>
-            <div className=" p-5   hover:shadow-2xl transition-transform duration-300  ">
+            <div className=" p-5 mt-3  hover:shadow-2xl transition-transform duration-300  ">
               <div className="overflow-x-auto whitespace-nowrap flex gap-3">
                 <button
                   className={`  px-4 border-2 hover:bg-[#d4A10F] hover:text-white py-2  ${
@@ -134,7 +134,7 @@ function HotelSection() {
 
             {activeHotel === "emaarGrandMakkah" && (
               <>
-                <div className="py-5">
+                <div className="py-5 px-5">
                   <span className="font-bold text-lg text-[#00454A]">
                     Emaar Grand Makkah Hotel
                   </span>
@@ -156,7 +156,7 @@ function HotelSection() {
             )}
             {activeHotel === "anjumMakkah" && (
               <>
-                <div className="py-5">
+                <div className="py-5 px-4">
                   <span className="font-bold text-lg text-[#00454A]">
                     Anjum Makkah
                   </span>

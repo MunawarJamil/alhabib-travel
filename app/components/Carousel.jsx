@@ -158,7 +158,7 @@ export default function Carousel() {
 
   return (
     <>
-      <header className="text-center py-6 mt-20 shadow-md animate-fadeIn bg-[#00454A]">
+      <header className="text-center py-6 mt-10 shadow-md animate-fadeIn bg-[#00454A]">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
           AL HABIB TOURS & TRAVELS PVT. LTD.
         </h1>
