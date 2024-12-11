@@ -29,7 +29,9 @@ const Footer = () => {
                 className="mr-3"
               />
               <div>
-                <h2 className="text-xl text-[#d4A10F] font-bold">Al Habib Travel</h2>
+                <h2 className="text-xl text-[#d4A10F] font-bold">
+                  Al Habib Travel
+                </h2>
                 <p className="text-sm">Alhabib Pilgrimage</p>
               </div>
             </div>
@@ -91,7 +93,10 @@ const Footer = () => {
             Disclaimer
           </a>{" "}
           |
-          <a href="/privacy-policy" className="hover:text-[#D4A10F]">
+          <a
+            href="https://www.alhabibtravel.co.uk/privacy-policy"
+            className="hover:text-[#D4A10F]"
+          >
             {" "}
             Privacy Policy
           </a>

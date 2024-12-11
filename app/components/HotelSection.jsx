@@ -9,6 +9,7 @@ import {
   PullmanHotel,
   OdestHotel,
   EmaarGrandHotel,
+  Food,
 } from "./ImagesGalary";
 import { TransportService } from "../data/images";
 
@@ -291,17 +292,20 @@ function HotelSection() {
 
         {/* Food Tab */}
         {activeTab === "food" && (
-          <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
-            <span className="font-bold text-xl text-[#00454A]">
-              Explore Delicious Food Options
-            </span>
-            <div className="py-2 text-gray-500">
-              <p>
-                Discover the best food experiences available for you in Makkah
-                and Madinah...
-              </p>
+          <>
+            <div className="p-5 hover:shadow-2xl  transition-transform duration-300  ">
+              <span className="font-bold text-xl text-[#00454A]">
+                Explore Delicious Food Options
+              </span>
+              <div className="py-2 text-gray-500">
+                <p>
+                  Discover the best food experiences available for you in Makkah
+                  and Madinah...
+                </p>
+              </div>
             </div>
-          </div>
+            <Food />
+          </>
         )}
 
         {activeTab === "Transport" && (

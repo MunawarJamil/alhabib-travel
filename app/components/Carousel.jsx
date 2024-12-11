@@ -3,124 +3,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { months } from "../data/monthsPricingCards";
+
 export default function Carousel() {
-  const months = [
-    {
-      name: "Jan-2025",
-      days: ["7-days", "10-days", "14-days"],
-      images: {
-        "7-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-        "10-days": [
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-        ],
-        "14-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/14_Nights.jpg",
-        ],
-      },
-      prices: [100, 120, 150],
-    },
-
-    {
-      name: "Feb-2025",
-      days: ["7-days", "10-days", "14-days"],
-      images: {
-        "7-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-        "10-days": [
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-        ],
-        "14-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-      },
-      prices: [100, 120, 150],
-    },
-
-    {
-      name: "Ramadan-2025",
-      days: ["7-days", "10-days", "14-days"],
-      images: {
-        "7-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-        "10-days": [
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-        ],
-        "14-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/14_Nights.jpg",
-        ],
-      },
-      prices: [100, 120, 150],
-    },
-
-    {
-      name: "May-2025",
-      days: ["7-days", "10-days", "14-days"],
-      images: {
-        "7-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-        "10-days": [
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-        ],
-        "14-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/14_Nights.jpg",
-        ],
-      },
-      prices: [100, 120, 150],
-    },
-
-    {
-      name: "Apr-2025",
-      days: ["7-days", "10-days", "14-days"],
-      images: {
-        "7-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-        ],
-        "10-days": [
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-        ],
-        "14-days": [
-          "/PricingCards/7_Nights.jpg",
-          "/PricingCards/10_Nights.jpg",
-          "/PricingCards/14_Nights.jpg",
-        ],
-      },
-      prices: [100, 120, 150],
-    },
-  ];
-
   const [activeMonth, setActiveMonth] = useState(months[0].name);
   const [selectedPackage, setSelectedPackage] = useState("7-days");
   const [showPrice, setShowPrice] = useState({});
@@ -136,6 +21,7 @@ export default function Carousel() {
     setSelectedPackage(days);
   };
 
+  const handleBookNow = () => router.push("/enquiry-form");
   const handleViewPrice = (index) => {
     if (!isInquiryFilled) {
       router.push("/enquiry-form");
@@ -147,13 +33,14 @@ export default function Carousel() {
     }));
   };
 
-  const handleBookNow = () => {
-    alert("Redirecting to booking page..."); // Replace with actual booking redirection
-  };
-
   const getImagesForSelectedMonth = (month) => {
     const monthData = months.find((m) => m.name === month);
-    return monthData ? monthData.images[selectedPackage] : [];
+    return monthData ? monthData.images[selectedPackage].images : [];
+  };
+
+  const getPriceForSelectedMonthAndIndex = (month, index) => {
+    const monthData = months.find((m) => m.name === month);
+    return monthData ? monthData.images[selectedPackage].prices[index] : null;
   };
 
   return (
@@ -167,7 +54,7 @@ export default function Carousel() {
         </h2>
       </header>
 
-      <div className="p-6 bg-gray-100 py-20">
+      <div className="p-6 bg-gray-100 pt-20 md:pb-10">
         <div className="w-full max-w-4xl mx-auto mb-6">
           <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide animate-slideUp">
             {months.map((month) => (
@@ -199,7 +86,7 @@ export default function Carousel() {
                       className={`w-24 h-16 border border-gray-300 rounded-md ${
                         selectedPackage === day
                           ? "bg-[#00454A] text-white"
-                          : "bg-white text-black"
+                          : "bg-white text-black hover:bg-[#D4A10F] "
                       }`}
                     >
                       {day.split("-")[0]} Days
@@ -219,27 +106,31 @@ export default function Carousel() {
                     <Image
                       src={image}
                       alt={`Package ${index + 1}`}
-                      className="object-cover w-full lg:h-[33rem]"
-                      width={1200} // Adjust to your image's actual width
-                      height={528} // Adjust to maintain the aspect ratio of 33rem height (based on your layout)
+                      className="object-cover w-full lg:h-[33rem] rounded-xl"
+                      width={1200}
+                      height={528}
                     />
 
-                    <button
-                      onClick={() => handleViewPrice(index)}
-                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 hover:text-[#D4A10F] text-white px-12 w-full py-3 text-xl bg-[#00454A] transition"
-                    >
-                      {showPrice[index] ? "Book Now" : "View Price"}
-                    </button>
-
-                    {showPrice[index] && (
-                      <div
+                    {showPrice[index] ? (
+                      <button
                         onClick={handleBookNow}
-                        className="absolute bottom-[3.2rem] left-1/2 text-center transform -translate-x-1/2 bg-[#D4A10F] text-white px-12 w-full py-2 text-xl transition cursor-pointer"
+                        className="absolute   bottom-0 left-1/2 transform -translate-x-1/2 text-white hover:text-[#D4A10F] rounded-b-xl   w-full py-3 border-t-2 text-xl   bg-[#00454A] transition"
                       >
+                        Book Now
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => handleViewPrice(index)}
+                        className="absolute   bottom-0 left-1/2 border-t-2  transform -translate-x-1/2 hover:text-[#D4A10F]  rounded-b-xl text-white  w-full py-3 text-xl border-b-2 bg-[#00454A] transition"
+                      >
+                        View Price
+                      </button>
+                    )}
+                    {showPrice[index] && (
+                      <div className="absolute  bottom-[3rem]    left-1/2 text-center transform -translate-x-1/2  bg-[#D4A10F]  text-[#00454A] font-bold px-12 w-full py-2 text-xl  transition cursor-pointer">
                         Price:{" "}
-                        {months.find((m) => m.name === activeMonth)?.prices[
-                          index
-                        ] || ""}
+                        {getPriceForSelectedMonthAndIndex(activeMonth, index) ||
+                          ""}
                       </div>
                     )}
                   </div>
@@ -248,6 +139,14 @@ export default function Carousel() {
             </div>
           </>
         )}
+      </div>
+
+      <div
+        onClick={handleBookNow}
+        
+        className="md:flex justify-center cursor-pointer hover:bg-[#D4A10F] md:max-w-96 hidden font-bold text-white md:rounded-3xl lg:mx-auto bg-[#00454A] py-5    rounded-b-lg md:px-20"
+      >
+        GET QOUTE
       </div>
     </>
   );

@@ -3,46 +3,33 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GiTireIronCross } from "react-icons/gi";
 import { useState } from "react";
 import Image from "next/image";
-import { MdOutlineContactPhone } from "react-icons/md"; 
+import { MdOutlineContactPhone } from "react-icons/md";
 
 import { useRouter } from "next/navigation";
 function Navbar() {
-  
   const [toggle, isToggle] = useState(false);
-const router = useRouter()
+  const router = useRouter();
 
-
-  
   function onToggleClick() {
     isToggle(!toggle);
   }
 
-
-  const onClickedContactButton = ( ) => {
-    
-      router.push("/enquiry-form");
-   
+  const onClickedContactButton = () => {
+    router.push("/enquiry-form");
   };
 
-  const gotoHomePage = ( ) => {
-    
+  const gotoHomePage = () => {
     router.push("/");
- 
-};
-
- 
+  };
 
   return (
     <>
       <nav className="w-full py-2 flex  justify-between relative items-center bg-slate-100 bg-gradient-to-  from-[#0c091d] via-[#0e5243] to-[#093833]  shadow-xl  px-10 md:px-32">
         {/* Toggle Buttons */}
-        <div className="md:hidden mt-4">
+        <div className="md:hidden ">
           {toggle ? (
             <>
-              <GiTireIronCross
-                onClick={onToggleClick}
-                className="w-8 h-10 "        
-              />
+              <GiTireIronCross onClick={onToggleClick} className="w-8 h-10 " />
               <div className="contact">
                 <button
                   onClick={onClickedContactButton} // Open InquiryForm when clicked
@@ -53,17 +40,14 @@ const router = useRouter()
               </div>
             </>
           ) : (
-            <RxHamburgerMenu
-              onClick={onToggleClick}
-              className="w-10 h-10  "
-            />
+            <RxHamburgerMenu onClick={onToggleClick} className="w-10 h-10  " />
           )}
         </div>
 
         {/* Logo */}
         <div className="cursor-pointer">
           <Image
-          onClick={gotoHomePage}
+            onClick={gotoHomePage}
             src="/logo.webp"
             alt="Logo"
             width={80} // Adjust width as needed

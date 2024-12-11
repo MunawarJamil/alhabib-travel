@@ -157,3 +157,31 @@ export const TransportService = [
     large: "/alhabib-assets/transport/TransportDT/4.jpg",
   },
 ];
+
+export const Foods = [
+  {
+    small: "/alhabib-assets/Foods/6.jpg",
+    large: "/alhabib-assets/Foods/6.jpg",
+  },
+  {
+    small: "/alhabib-assets/Foods/2.jpg",
+    large: "/alhabib-assets/Foods/2.jpg",
+  },
+  {
+    small: "/alhabib-assets/Foods/3.jpg",
+    large: "/alhabib-assets/Foods/3.jpg",
+  },
+  {
+    small: "/alhabib-assets/Foods/4.jpg",
+    large: "/alhabib-assets/Foods/4.jpg",
+  },
+
+  {
+    small: "/alhabib-assets/Foods/1.jpg",
+    large: "/alhabib-assets/Foods/1.jpg",
+  },
+  {
+    small: "/alhabib-assets/Foods/7.jpg",
+    large: "/alhabib-assets/Foods/7.jpg",
+  },
+];

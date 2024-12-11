@@ -7,7 +7,7 @@ import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const InquiryForm = () => {
+const InquiryForm = ({ closePopup }) => {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
@@ -43,27 +43,32 @@ const InquiryForm = () => {
       <div className="hidden lg:sticky top-0">
         <Navbar />
       </div>
-      <div className="bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] h-screen">
-        <div className="bg-white p-6 md:rounded-lg max-w-sm md:max-w-xl md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative h-[100vh] md:h-auto md:top-20">
+      <div className=" ">
+        <div className="bg-white p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-20">
           <button
-            onClick={() => router.push("/")}
+            onClick={() => {
+              closePopup(); // Close the popup
+              router.push("/"); // Navigate to the home page
+            }}
             className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
             aria-label="Close Inquiry Form"
           >
             <FaTimes size={20} />
           </button>
           <div className="text-center mb-4">
-<Image
-  src="/logo.webp"
-  alt="Logo"
-  width={64}
-  height={64}
-  className="mx-auto my-2"
-/>
-<h2 className="text-lg font-semibold my-2">Get Your Umrah Qoute!</h2>
-<p className="text-sm text-gray-600">
-  We willcontact you via whatsApp or email within minutes.
-</p>
+            <Image
+              src="/logo.webp"
+              alt="Logo"
+              width={64}
+              height={64}
+              className="mx-auto my-2"
+            />
+            <h2 className="text-lg font-semibold my-2">
+              Get Your Umrah Qoute!
+            </h2>
+            <p className="text-sm text-gray-600">
+              We willcontact you via whatsApp or email within minutes.
+            </p>
           </div>
           <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4">
@@ -89,14 +94,14 @@ const InquiryForm = () => {
                 id="mobile"
                 name="from_phone"
                 className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
-                placeholder="Enter your ph:number +92"
+                placeholder="Enter your ph:number +44"
                 required
               />
             </div>
 
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium">
-              Email Address
+                Email Address
               </label>
               <input
                 type="email"
@@ -109,17 +114,18 @@ const InquiryForm = () => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="message" className="block text-sm font-medium">
-                Your Message
+              <label htmlFor="email" className="block text-sm font-medium">
+                Total number of Passengers
               </label>
-              <textarea
-                id="message"
-                name="message"
-                maxLength={80}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-[#d4A10F]"
-                placeholder="Enter your message"
+              <input
+                type="number"
+                id="number"
+                name="from_email"
+                min={1}
+                className="w-full mt-1 p-2 border rounded-md "
+                placeholder="Minimum one passenger "
                 required
-              ></textarea>
+              />
             </div>
 
             <button

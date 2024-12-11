@@ -5,7 +5,7 @@ function Hero() {
   return (
     <>
       {/* Hero Section for Smaller Screens */}
-      <main className="lg:hidden   relative top-[-37] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833] animate-fade-in">
+      <main className="lg:hidden   relative top-[-37] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833]  ">
         <div className="">
           {/* animate-slide-in-up */}
           <Image
