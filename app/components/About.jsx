@@ -12,7 +12,7 @@ function About() {
     <>
       <section className="text-center bg-[#00454A]  py-6 mt-10 border-t-4 animate-fadeIn">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
-          Explore with Al Habib Travel
+          Explore with    Al Habib  Travel  Ltd.
         </h1>
         <h2 className="text-xl font-bold text-white mt-2">Seamless Adventures Await</h2>
       </section>
@@ -35,7 +35,7 @@ function About() {
 
   {/* Text Section */}
   <div className="lg:w-1/2   min-h-[30rem]">
-    <h3 className="text-lg text-[#D4A10F] mb-2">DISCOVER AL HABIB</h3>
+    <h3 className="text-lg text-[#D4A10F] mb-2">DISCOVER  AL HABIB  TRAVEL    LTD.</h3>
     <h1 className="text-2xl font-bold mb-4">
       Experience <span className="text-[#D4A10F]">comfort</span> and care
     </h1>
@@ -68,7 +68,7 @@ function About() {
 
       <section className=" hidden lg:flex flex-col text-center py-6 bg-[#00454A]  shadow-md animate-fadeIn">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
-          Discover Destinations with Al Habib Travel
+          Discover Destinations with  Al Habib  Travel  Ltd.
         </h1>
         <h2 className="text-xl font-bold mt-2 text-white">
           Your Perfect Travel Partner Awaits
@@ -78,7 +78,7 @@ function About() {
       {/* about section with video  */}
 
       <div className=" hidden w-[93%] lg:w-full lg:px-32   mx-auto    flex-col-reverse  py-8 lg:py-16 lg:grid lg:bg-gray-100 lg:grid-cols-2 gap-8 items-center  lg:flex-row-reverse animate-fadeIn">
-        {/* Text Section */}
+        
         <div className="transition-all transform lg:hover:scale-105 hover:duration-300 hover:ease-in-out">
           <h3 className="text-lg text-[#D4A10F] animate-fadeIn">
             AL HABIB TRAVEL LTD
@@ -112,14 +112,14 @@ function About() {
           </p>
         </div>
 
-        {/* Image Section */}
+       
         <div className="   animate-fadeIn animate-delay-500">
           <Image
             src="/travelImages/travel1.png"
             alt="Travel Image"
             className="rounded-lg object-cover transition-transform h-[400px] transform lg:hover:scale-105 duration-300 ease-in-out"
-            width={900} // Adjust the width as needed
-            height={800} // Adjust the height as needed
+            width={900}  
+            height={800}  
             priority
           />
         </div>

@@ -47,24 +47,24 @@ export default function Carousel() {
     <>
       <header className="text-center py-6 mt-10 shadow-md animate-fadeIn bg-[#00454A]">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
-          AL HABIB TOURS & TRAVELS PVT. LTD.
+          AL HABIB  TRAVEL    LTD.
         </h1>
         <h2 className="text-xl font-bold mt-2 text-white">
           UMRAH PACKAGES 2025
         </h2>
       </header>
 
-      <div className="p-6 bg-gray-100 pt-20 md:pb-10">
+      <div className="p-6 bg-gray-100 pt-9 md:pt-20 md:pb-10">
         <div className="w-full max-w-4xl mx-auto mb-6">
-          <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide animate-slideUp">
+          <div className="flex space-x-2 overflow-x-auto  scrollbar-hide ">
             {months.map((month) => (
               <div
                 key={month.name}
                 onClick={() => setActiveMonth(month.name)}
-                className={`cursor-pointer py-2 px-6 md:py-4 md:px-8 text-center rounded-sm shadow-md transition-transform duration-300 ease-out transform ${
+                className={`cursor-pointer py-1 px-8 md:py-4 md:px-8  rounded-sm shadow-md transition-transform duration-300 ease-out transform ${
                   activeMonth === month.name
                     ? "bg-[#00454A] text-white font-bold"
-                    : "bg-white text-gray-600 hover:bg-[#D4A10F] hover:text-white"
+                    : "bg-white text-gray-700 hover:bg-[#D4A10F] hover:text-white"
                 }`}
               >
                 {month.name}
@@ -75,28 +75,28 @@ export default function Carousel() {
 
         {activeMonth && (
           <>
-            <div className="flex flex-col   w-[80%] mx-auto lg:flex-row gap-3">
-              <div className="flex overflow-x-auto mx-auto  lg:w-[64%] gap-3">
-                {months
-                  .find((month) => month.name === activeMonth)
-                  ?.days.map((day) => (
-                    <button
-                      key={day}
-                      onClick={() => handlePackageSelection(day)}
-                      className={`w-24  h-16 border border-gray-300 rounded-md ${
-                        selectedPackage === day
-                          ? "bg-[#00454A] text-white"
-                          : "bg-white text-black hover:bg-[#D4A10F] "
-                      }`}
-                    >
-                      {day.split("-")[0]} Days
-                    </button>
-                  ))}
-              </div>
-            </div>
+            <div className="flex flex-col   md:w-[80%] mx-auto lg:flex-row gap-3">
+    <div className="flex overflow-x-auto md:mx-auto  lg:w-[64%] gap-1">
+      {months
+        .find((month) => month.name === activeMonth)
+        ?.days.map((day) => (
+          <button
+            key={day}
+            onClick={() => handlePackageSelection(day)}
+            className={`w-24  h-10 border md:ml-7 border-gray-300 rounded-md ${
+              selectedPackage === day
+                ? "bg-[#00454A] text-white"
+                : "bg-white text-black hover:bg-[#D4A10F] "
+            }`}
+          >
+            {day.split("-")[0]} Days
+          </button>
+        ))}
+    </div>
+  </div>
 
             <div className="flex flex-col lg:flex-row overflow-x-auto justify-center mt-10 gap-3">
-              <div className="flex lg:grid lg:grid-cols-3 gap-3 lg:justify-center mt-6 lg:mt-0">
+              <div className="flex lg:grid lg:grid-cols-3 gap-3 lg:justify-center mt-1 lg:mt-0">
                 {getImagesForSelectedMonth(activeMonth).map((image, index) => (
                   <div
                     key={index}
@@ -137,7 +137,9 @@ export default function Carousel() {
                 ))}
               </div>
             </div>
-          </>
+
+            <p className="flex justify-center md:hidden mt-3 text-sm text-[#D4A10F]"> ←  swipe for more packages   →</p>
+          </> 
         )}
       </div>
 

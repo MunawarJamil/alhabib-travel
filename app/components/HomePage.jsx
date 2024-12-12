@@ -10,34 +10,44 @@ import Hero from "./Hero";
 import HotelSection from "./HotelSection";
 import VideoTestimonial from "./VideoTestimonial";
 import Faqs from "./Faqs";
-import PriceCard from "./PriceCard";
-import InquiryForm from "../enquiry-form/page";
- 
+import PriceCard from "./PriceCard"; 
+import InquiryComponent from "./InquiryComponent";
 
 function HomePage() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const inquiryFilled = localStorage.getItem("inquiryFilled");
+    const inquiryHandled = localStorage.getItem("inquiryHandled");
 
-    if (!inquiryFilled) {
-      const interval = setInterval(() => {
+    if (!inquiryHandled) {
+      let appearanceCount = 0; // Track number of popup appearances
+
+      // Show the popup after 10 seconds
+      const initialTimeout = setTimeout(() => {
         setShowPopup(true);
-      }, 7000);
+        appearanceCount++;
+      }, 10000);
 
-      return () => clearInterval(interval);
+      // Reappear logic after 25 seconds
+      const reappearTimeout = setTimeout(() => {
+        if (appearanceCount === 1) {
+          setShowPopup(true);
+          appearanceCount++;
+          localStorage.setItem("inquiryHandled", "true"); // Set flag after second appearance
+        }
+      }, 35000); // 10s initial + 25s reappear = 35s total
+
+      // Cleanup timeouts
+      return () => {
+        clearTimeout(initialTimeout);
+        clearTimeout(reappearTimeout);
+      };
     }
   }, []);
 
-   
-
   const handleFormSubmit = () => {
-    
     setShowPopup(false);
-    window.location.reload(); 
   };
-
-  
 
   return (
     <>
@@ -61,8 +71,8 @@ function HomePage() {
 
       {/* Conditionally render the InquiryForm as a popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center popup-container justify-center z-50">
-          <InquiryForm closePopup={handleFormSubmit} />
+        <div className="fixed inset-0 bg-opacity-50 flex items-center popup-container justify-center z-50">
+          <InquiryComponent closePopup={handleFormSubmit} />
         </div>
       )}
     </>
