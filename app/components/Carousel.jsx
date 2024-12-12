@@ -75,15 +75,15 @@ export default function Carousel() {
 
         {activeMonth && (
           <>
-            <div className="flex flex-col lg:flex-row gap-3">
-              <div className="flex overflow-x-auto mx-auto lg:w-[64%] gap-3">
+            <div className="flex flex-col   w-[80%] mx-auto lg:flex-row gap-3">
+              <div className="flex overflow-x-auto mx-auto  lg:w-[64%] gap-3">
                 {months
                   .find((month) => month.name === activeMonth)
                   ?.days.map((day) => (
                     <button
                       key={day}
                       onClick={() => handlePackageSelection(day)}
-                      className={`w-24 h-16 border border-gray-300 rounded-md ${
+                      className={`w-24  h-16 border border-gray-300 rounded-md ${
                         selectedPackage === day
                           ? "bg-[#00454A] text-white"
                           : "bg-white text-black hover:bg-[#D4A10F] "

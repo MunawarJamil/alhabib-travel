@@ -1,12 +1,11 @@
-import Navbar from "./components/Navbar";
+
 import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
 export default function Home() {
   return (
     <>
-      <div className="   fixed  top-0 z-10   w-full">
-        <Navbar />
-      </div>
-      <div className="pt-28">
+      
+      <div className="pt-[7.9rem]">
         <HomePage />
       </div>
     </>

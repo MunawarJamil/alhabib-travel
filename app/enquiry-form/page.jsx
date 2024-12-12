@@ -1,6 +1,5 @@
 "use client";
-
-import Navbar from "../components/Navbar";
+ 
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaTimes } from "react-icons/fa";
@@ -40,20 +39,18 @@ const InquiryForm = ({ closePopup }) => {
 
   return (
     <>
-      <div className="hidden lg:sticky top-0">
-        <Navbar />
-      </div>
-      <div className=" ">
-        <div className="bg-white p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-20">
+      
+      <div className="bg-gradient-to-r from-[#00454A] via-[#026666] to-[#048080] h-screen ">
+        <div className="bg-white   p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-28">
           <button
             onClick={() => {
-              closePopup(); // Close the popup
+              closePopup // Close the popup
               router.push("/"); // Navigate to the home page
             }}
             className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
             aria-label="Close Inquiry Form"
           >
-            <FaTimes size={20} />
+            <FaTimes onClick={closePopup} size={20} />
           </button>
           <div className="text-center mb-4">
             <Image
@@ -64,10 +61,10 @@ const InquiryForm = ({ closePopup }) => {
               className="mx-auto my-2"
             />
             <h2 className="text-lg font-semibold my-2">
-              Get Your Umrah Qoute!
+              Get  Umrah Qoute!
             </h2>
             <p className="text-sm text-gray-600">
-              We willcontact you via whatsApp or email within minutes.
+              We will contact you via whatsApp or email under a minutes.
             </p>
           </div>
           <form ref={form} onSubmit={sendEmail}>
@@ -127,6 +124,24 @@ const InquiryForm = ({ closePopup }) => {
                 required
               />
             </div>
+
+
+
+
+            <div className="mb-4">
+               
+              <input
+                type="checkbox"
+                id="number"
+                name="from_checked"
+                 
+                
+                
+                required
+              /> I accecpt the <span className="text-[#d4A10F]"> <a  href="https://www.alhabibtravel.co.uk/privacy-policy">privacy policy </a> </span>
+            </div>
+
+
 
             <button
               type="submit"

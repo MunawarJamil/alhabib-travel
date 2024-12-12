@@ -10,68 +10,61 @@ function About() {
   };
   return (
     <>
-      <section className="text-center py-6 mt-10 border-t-4 animate-fadeIn">
+      <section className="text-center bg-[#00454A]  py-6 mt-10 border-t-4 animate-fadeIn">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
           Explore with Al Habib Travel
         </h1>
-        <h2 className="text-xl font-bold mt-2">Seamless Adventures Await</h2>
+        <h2 className="text-xl font-bold text-white mt-2">Seamless Adventures Await</h2>
       </section>
+ 
+      <div className="container mx-auto px-4 lg:px-32 py-8 lg:py-16   flex flex-col lg:flex-row gap-10 items-center">
+  {/* Video Section */}
+  <div className="w-full lg:w-1/3 flex flex-col bg-white shadow-lg rounded-lg">
+    <video
+      src="/videoFiles/ad.mp4"
+      className="w-full rounded-t-lg object-cover"
+      controls
+    />
+    <button
+      onClick={onClickedContactButton}
+      className="w-full py-4 bg-[#00454A] text-white font-bold text-lg hover:bg-[#d4A10F] rounded-b-lg transition-all duration-300"
+    >
+      CHAT NOW
+    </button>
+  </div>
 
-      {/* about section with video  */}
+  {/* Text Section */}
+  <div className="lg:w-1/2   min-h-[30rem]">
+    <h3 className="text-lg text-[#D4A10F] mb-2">DISCOVER AL HABIB</h3>
+    <h1 className="text-2xl font-bold mb-4">
+      Experience <span className="text-[#D4A10F]">comfort</span> and care
+    </h1>
+    <p className="text-slate-600 leading-relaxed mb-6">
+      Welcome to Al Habib Travel UK, where journeys are tailored to perfection.
+      Serving individuals and families from across the UK, we ensure that every
+      Hajj or Umrah pilgrimage is designed with your unique needs in mind. From
+      budget-friendly options to premium packages, our commitment to excellence
+      guarantees an unparalleled experience for every traveler.
+    </p>
+    <div>
+      <h2 className="text-lg font-bold text-gray-600 mb-3">
+        What sets us apart:
+      </h2>
+      <ul className="list-disc pl-5 text-slate-600 leading-relaxed">
+        <li>Customized travel solutions for every budget</li>
+        <li>Authentic culinary experiences to delight your journey</li>
+        <li>Round-the-clock assistance, wherever you are</li>
+      </ul>
+      <p className="text-lg font-bold text-gray-600 mt-4">
+        Join us to turn your travel dreams into reality!
+      </p>
+    </div>
+  </div>
+</div>
 
-      {/* About Section with Video */}
 
-      <div className="w-[93%] lg:w-full lg:px-32  mb-16 lg:mb-0 mx-auto   lg:py-16   lg:bg-gray-100  flex flex-col lg:flex-row  gap-16 items-center  ">
-        {/* Video Section */}
 
-        <div className="w-full    md:w-[20rem] lg:w-[80%] flex flex-col bg-gray-100 rounded-lg">
-          <video
-            src="/videoFiles/ad.mp4"
-            className="w-full rounded-t-lg object-contain"
-            controls
-          />
-          <button
-            onClick={onClickedContactButton}
-            className="w-full py-4 bg-[#00454A] text-white font-bold text-lg hover:bg-[#d4A10F] rounded-b-lg transition-all duration-300"
-          >
-            CHAT NOW
-          </button>
-        </div>
 
-        {/* Text Section */}
-        <div className="     lg:hover:ease-in-out">
-          <h3 className="text-lg text-[#D4A10F]  ">DISCOVER AL HABIB</h3>
-          <h1 className="text-2xl font-bold  ">
-            Experience <span className="text-[#D4A10F]">comfort</span> and care
-          </h1>
-
-          <p className="py-3 text-slate-600 leading-8  ">
-            Welcome to Al Habib Travel UK, where journeys are tailored to
-            perfection. Serving individuals and families from across the UK, we
-            ensure that every Hajj or Umrah pilgrimage is designed with your
-            unique needs in mind. From budget-friendly options to premium
-            packages, our commitment to excellence guarantees an unparalleled
-            experience for every traveler.
-          </p>
-
-          <div className="flex gap-20">
-            <div>
-              <h2 className="text-lg py-3 font-bold text-gray-600 animate-fadeIn animate-delay-700">
-                What sets us apart:
-              </h2>
-              <ul className="list-disc text-slate-600 leading-8 pl-8 lg:pl-4 animate-fadeIn animate-delay-900">
-                <li>Customized travel solutions for every budget</li>
-                <li>Authentic culinary experiences to delight your journey</li>
-                <li>Round-the-clock assistance, wherever you are</li>
-              </ul>
-
-              <p className="text-lg py-3 font-bold text-gray-600 animate-fadeIn animate-delay-1100">
-                Join us to turn your travel dreams into reality!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section className=" hidden lg:flex flex-col text-center py-6 bg-[#00454A]  shadow-md animate-fadeIn">
         <h1 className="text-lg md:text-2xl font-bold text-[#D4A10F]">
