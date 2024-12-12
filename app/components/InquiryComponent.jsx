@@ -20,8 +20,8 @@ const InquiryComponent = ({ closePopup }) => {
 
     try {
       await emailjs.sendForm(
-        "service_vpxmfgq",
-        "template_rbmwu2c",
+        "service_vpxmfgq",  
+        "template_rbmwu2c", //habib template key template_aapxyg9 serviceKey:service_3w1brq3
         form.current,
         "g9xwc_LT3hYleKIQm"
       );
@@ -31,7 +31,7 @@ const InquiryComponent = ({ closePopup }) => {
 
       setTimeout(() => {
         window.location.reload();
-        // router.push("/?scroll=carousel");
+        
       }, 1500);
     } catch (error) {
       setStatusMessage("Your inquiry has been sent...");

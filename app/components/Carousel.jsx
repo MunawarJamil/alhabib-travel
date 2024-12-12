@@ -4,14 +4,13 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { months } from "../data/monthsPricingCards";
-import InquiryComponent from "./InquiryComponent";
 
 export default function Carousel({ showPopup, setShowPopup }) {
   const [activeMonth, setActiveMonth] = useState(months[0].name);
   const [selectedPackage, setSelectedPackage] = useState("7-days");
   const [showPrice, setShowPrice] = useState({});
-  const [isInquiryFilled, setIsInquiryFilled] = useState(false); // State to track inquiry status
   const router = useRouter();
+  const [isInquiryFilled, setIsInquiryFilled] = useState(false);
 
   useEffect(() => {
     const inquiryStatus = localStorage.getItem("inquiryFilled") === "true";
@@ -61,12 +60,12 @@ export default function Carousel({ showPopup, setShowPopup }) {
 
       <div className="p-6 bg-gray-100 pt-9 md:pt-20 md:pb-10">
         <div className="w-full max-w-4xl mx-auto mb-6">
-          <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
+          <div className="flex space-x-2 overflow-x-auto  scrollbar-hide ">
             {months.map((month) => (
               <div
                 key={month.name}
                 onClick={() => setActiveMonth(month.name)}
-                className={`cursor-pointer py-1 px-8 md:py-4 md:px-8 rounded-sm shadow-md transition-transform duration-300 ease-out transform ${
+                className={`cursor-pointer py-1 px-8 md:py-4 md:px-8  rounded-sm shadow-md transition-transform duration-300 ease-out transform ${
                   activeMonth === month.name
                     ? "bg-[#00454A] text-white font-bold"
                     : "bg-white text-gray-700 hover:bg-[#D4A10F] hover:text-white"
@@ -80,22 +79,22 @@ export default function Carousel({ showPopup, setShowPopup }) {
 
         {activeMonth && (
           <>
-            <div className="flex flex-col md:w-[80%] mx-auto lg:flex-row gap-3">
-              <div className="flex overflow-x-auto md:mx-auto lg:w-[64%] gap-1">
+            <div className="flex flex-col   md:w-[80%] mx-auto lg:flex-row gap-3">
+              <div className="flex overflow-x-auto   lg:w-[72%] mx-auto   gap-1">
                 {months
-                  .find((month) => month.name === activeMonth)
-                  ?.days.map((day) => (
-                    <button
-                      key={day}
-                      onClick={() => handlePackageSelection(day)}
-                      className={`w-24 h-10 border md:ml-7 border-gray-300 rounded-md ${
-                        selectedPackage === day
-                          ? "bg-[#00454A] text-white"
-                          : "bg-white text-black hover:bg-[#D4A10F]"
-                      }`}
-                    >
-                      {day.split("-")[0]} Days
-                    </button>
+      .find((month) => month.name === activeMonth)
+      ?.days.map((day) => (
+        <button
+          key={day}
+          onClick={() => handlePackageSelection(day)}
+          className={`w-24  h-10 border  border-gray-300 rounded-md ${
+            selectedPackage === day
+              ? "bg-[#00454A] text-white"
+              : "bg-white text-black hover:bg-[#D4A10F] "
+          }`}
+        >
+          {day.split("-")[0]} Days
+        </button>
                   ))}
               </div>
             </div>
@@ -111,7 +110,7 @@ export default function Carousel({ showPopup, setShowPopup }) {
                     <Image
                       src={image}
                       alt={`Package ${index + 1}`}
-                      className="object-cover w-full lg:h-[33rem] rounded-xl"
+                      className="object-cover w-full md:h-[33rem] rounded-xl"
                       width={1200}
                       height={528}
                     />
@@ -119,20 +118,20 @@ export default function Carousel({ showPopup, setShowPopup }) {
                     {showPrice[index] ? (
                       <button
                         onClick={handleBookNow}
-                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-white hover:text-[#D4A10F] rounded-b-xl w-full py-3 border-t-2 text-xl bg-[#00454A] transition"
+                        className="absolute   bottom-0 left-1/2 transform -translate-x-1/2 text-white hover:text-[#D4A10F] rounded-b-xl   w-full py-3 border-t-2 text-xl   bg-[#00454A] transition"
                       >
                         Book Now
                       </button>
                     ) : (
                       <button
                         onClick={() => handleViewPrice(index)}
-                        className="absolute bottom-0 left-1/2 border-t-2 transform -translate-x-1/2 hover:text-[#D4A10F] rounded-b-xl text-white w-full py-3 text-xl border-b-2 bg-[#00454A] transition"
+                        className="absolute   bottom-0 left-1/2 border-t-2  transform -translate-x-1/2 hover:text-[#D4A10F]  rounded-b-xl text-white  w-full py-3 text-xl border-b-2 bg-[#00454A] transition"
                       >
                         View Price
                       </button>
                     )}
                     {showPrice[index] && (
-                      <div className="absolute bottom-[3rem] left-1/2 text-center transform -translate-x-1/2 bg-[#D4A10F] text-[#00454A] font-bold px-12 w-full py-2 text-xl transition cursor-pointer">
+                      <div className="absolute  bottom-[3rem]    left-1/2 text-center transform -translate-x-1/2  bg-[#D4A10F]  text-[#00454A] font-bold px-12 w-full py-2 text-xl  transition cursor-pointer">
                         Price:{" "}
                         {getPriceForSelectedMonthAndIndex(activeMonth, index) ||
                           ""}
@@ -142,8 +141,20 @@ export default function Carousel({ showPopup, setShowPopup }) {
                 ))}
               </div>
             </div>
+
+            <p className="flex justify-center md:hidden mt-3 text-sm text-[#D4A10F]">
+              {" "}
+              ← swipe for more packages →
+            </p>
           </>
         )}
+      </div>
+
+      <div
+        onClick={handleBookNow}
+        className="flex  hover:text-[#00454A] shadow-2xl w-[90%] mx-auto justify-center cursor-pointer hover:bg-[#D4A10F] md:max-w-96   font-bold text-white rounded-lg  lg:mx-auto bg-[#00454A] py-5   md:px-20"
+      >
+        <span className="">GET QOUTE</span>
       </div>
     </>
   );
