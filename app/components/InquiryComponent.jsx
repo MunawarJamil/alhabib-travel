@@ -1,11 +1,11 @@
 "use client";
- 
+
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
- 
+
 const InquiryComponent = ({ closePopup }) => {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
@@ -28,11 +28,10 @@ const InquiryComponent = ({ closePopup }) => {
       localStorage.setItem("inquiryFilled", "true");
       setStatusMessage("Your inquiry has been sent successfully!");
       form.current.reset();
-      
+
       setTimeout(() => {
         window.location.reload();
-        router.push("/?scroll=carousel");
-
+        // router.push("/?scroll=carousel");
       }, 1500);
     } catch (error) {
       setStatusMessage("Your inquiry has been sent...");
@@ -43,13 +42,11 @@ const InquiryComponent = ({ closePopup }) => {
 
   return (
     <>
-      
       <div className="  ">
         <div className="bg-white   p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-7">
           <button
             onClick={() => {
-                closePopup // Close the popup
-                router.push("/"); // Navigate to the home page
+              closePopup; // Close the popup
             }}
             className="absolute top-4 right-4 text-gray-500 hover:text-[#d4A10F]"
             aria-label="Close Inquiry Form"
@@ -64,9 +61,7 @@ const InquiryComponent = ({ closePopup }) => {
               height={64}
               className="mx-auto my-2"
             />
-            <h2 className="text-lg font-semibold my-2">
-              Get  Umrah Qoute!
-            </h2>
+            <h2 className="text-lg font-semibold my-2">Get Umrah Qoute!</h2>
             <p className="text-sm text-gray-600">
               We will contact you via WhatsApp or Email under a minutes.
             </p>
@@ -122,30 +117,22 @@ const InquiryComponent = ({ closePopup }) => {
                 type="text"
                 id="number"
                 name="from_email"
-                 
                 className="w-full mt-1 p-2 border rounded-md "
                 placeholder="We are total "
                 required
               />
             </div>
 
-
-
-
             <div className="mb-4">
-               
-              <input
-                type="checkbox"
-                id="number"
-                name="from_checked"
-                 
-                
-                
-                required
-              /> I accecpt the <span className="text-[#d4A10F]"> <a  href="https://www.alhabibtravel.co.uk/privacy-policy">privacy policy </a> </span>
+              <input type="checkbox" id="number" name="from_checked" required />{" "}
+              I accecpt the{" "}
+              <span className="text-[#d4A10F]">
+                {" "}
+                <a href="https://www.alhabibtravel.co.uk/privacy-policy">
+                  privacy policy{" "}
+                </a>{" "}
+              </span>
             </div>
-
-
 
             <button
               type="submit"

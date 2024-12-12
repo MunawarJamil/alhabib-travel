@@ -4,9 +4,9 @@ import { GiTireIronCross } from "react-icons/gi";
 import { useState } from "react";
 import Image from "next/image";
 import { MdOutlineContactPhone } from "react-icons/md";
-
+import InquiryComponent from "./InquiryComponent";
 import { useRouter } from "next/navigation";
-function Navbar( ) {
+function Navbar({ showPopup, setShowPopup }) {
   const [toggle, isToggle] = useState(false);
   const router = useRouter();
 
@@ -15,7 +15,8 @@ function Navbar( ) {
   }
 
   const onClickedContactButton = () => {
-    router.push("/enquiry-form");
+    //router.push("/enquiry-form");
+    setShowPopup(true);
   };
 
   const gotoHomePage = () => {
@@ -59,7 +60,7 @@ function Navbar( ) {
         {/* Contact Button for Larger Screens */}
         <div className="hidden md:flex contact">
           <button
-            onClick={onClickedContactButton}  
+            onClick={onClickedContactButton}
             className="flex items-center gap-3 bg-[#00454A] rounded-sm hover:bg-[#d4A10F] px-5 py-3  animate-pulse  text-white font-bold text-lg"
           >
             <MdOutlineContactPhone /> CONTACT US
@@ -67,7 +68,11 @@ function Navbar( ) {
         </div>
       </nav>
 
-      
+      {showPopup && (
+        <div className="fixed inset-0 bg-opacity-50 flex items-center popup-container justify-center z-50">
+          <InquiryComponent />
+        </div>
+      )}
     </>
   );
 }

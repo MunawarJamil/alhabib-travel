@@ -10,14 +10,14 @@ import Hero from "./Hero";
 import HotelSection from "./HotelSection";
 import VideoTestimonial from "./VideoTestimonial";
 import Faqs from "./Faqs";
-import PriceCard from "./PriceCard"; 
+import PriceCard from "./PriceCard";
 import InquiryComponent from "./InquiryComponent";
 
 function HomePage() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const inquiryHandled = localStorage.getItem("inquiryHandled");
+    const inquiryHandled = localStorage.getItem("inquiryFilled");
 
     if (!inquiryHandled) {
       let appearanceCount = 0; // Track number of popup appearances
@@ -33,10 +33,12 @@ function HomePage() {
         if (appearanceCount === 1) {
           setShowPopup(true);
           appearanceCount++;
-          localStorage.setItem("inquiryHandled", "true"); // Set flag after second appearance
+          // localStorage.setItem("inquiryHandled", "true"); // Set flag after second appearance
         }
-      }, 35000); // 10s initial + 25s reappear = 35s total
-
+      }, 30000); // 10s initial + 25s reappear = 35s total
+      if (appearanceCount === 2) {
+        setShowPopup(false);
+      }
       // Cleanup timeouts
       return () => {
         clearTimeout(initialTimeout);
@@ -52,14 +54,14 @@ function HomePage() {
   return (
     <>
       <div className="fixed top-0 z-10 w-full">
-        <Navbar showPopup closePopup={() => setShowPopup(false)} />
+        <Navbar showPopup={showPopup} setShowPopup={setShowPopup} />
       </div>
-{/* test */}
+      {/* test */}
       <Hero />
       <HotelSection />
 
       <Suspense>
-        <PriceCard />
+        <PriceCard showPopup={showPopup} setShowPopup={setShowPopup} />
       </Suspense>
 
       <TravelDetails />
