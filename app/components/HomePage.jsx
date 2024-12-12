@@ -29,32 +29,15 @@ function HomePage() {
     }
   }, []);
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
+   
 
   const handleFormSubmit = () => {
-    localStorage.setItem("inquiryFilled", "true");
+    
     setShowPopup(false);
-    window.location.reload(); // Refresh the browser to reflect the updated state
+    window.location.reload(); 
   };
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      const popup = document.querySelector(".popup-container");
-      if (popup && !popup.contains(event.target)) {
-        handleClosePopup(); // Close popup when clicking outside
-      }
-    };
-
-    // Attach event listener to detect clicks outside the popup
-    document.addEventListener("click", handleOutsideClick);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, []);
+  
 
   return (
     <>

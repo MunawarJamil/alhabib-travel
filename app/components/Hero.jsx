@@ -5,13 +5,12 @@ function Hero() {
   return (
     <>
       {/* Hero Section for Smaller Screens */}
-      <main className="lg:hidden   relative top-[-37] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833]  ">
+      <main className="lg:hidden relative mt-0  top-[-37] items-center justify-center bg-gradient-to-r from-[#0c091d] via-[#0e5243] to-[#093833]">
         <div className="">
-          {/* animate-slide-in-up */}
           <Image
             src="/banner-home.jpg"
             alt="banner image"
-            className="w-full max-h-[100vh] object-cover"
+            layout="responsive"
             width={1920}
             height={1280}
             priority
@@ -19,12 +18,13 @@ function Hero() {
         </div>
       </main>
 
-      <main className=" relative hidden top-[-37] lg:block  font-serif bg-gradient-to-r">
-        <div className="banner-image w-full h-auto relative top-0 ">
+      {/* Hero Section for Larger Screens */}
+      <main className="relative hidden mt-0 lg:block font-serif bg-gradient-to-r">
+        <div className="banner-image w-full h-auto relative top-[-37]">
           <Image
             src="/DD-Recovered.jpg"
             alt="banner image"
-            className="w-full object-cover "
+            layout="responsive"
             width={1920}
             height={1480}
             priority
