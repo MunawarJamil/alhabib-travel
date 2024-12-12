@@ -36,25 +36,25 @@ export const months = [
     images: {
       "7-days": {
         images: [
-          "/Desktop-Cards/feb-desk/3star/7.jpg",
-          "/Desktop-Cards/feb-desk/4star/7.jpg",
-          "/Desktop-Cards/feb-desk/5star/7.jpg",
+          "/Desktop-Cards/feb-desk/3Star/7.jpg",
+          "/Desktop-Cards/feb-desk/4Star/7.jpg",
+          "/Desktop-Cards/feb-desk/5Star/7.jpg",
         ],
         prices: [795, 870, 955],
       },
       "10-days": {
         images: [
-          "/Desktop-Cards/feb-desk/3star/10.jpg",
-          "/Desktop-Cards/feb-desk/4star/10.jpg",
-          "/Desktop-Cards/feb-desk/5star/10.jpg",
+          "/Desktop-Cards/feb-desk/3Star/10.jpg",
+          "/Desktop-Cards/feb-desk/4Star/10.jpg",
+          "/Desktop-Cards/feb-desk/5Star/10.jpg",
         ],
         prices: [845, 925, 1035],
       },
       "14-days": {
         images: [
-          "/Desktop-Cards/feb-desk/3star/14.jpg",
-          "/Desktop-Cards/feb-desk/4star/14.jpg",
-          "/Desktop-Cards/feb-desk/5star/14.jpg",
+          "/Desktop-Cards/feb-desk/3Star/14.jpg",
+          "/Desktop-Cards/feb-desk/4Star/14.jpg",
+          "/Desktop-Cards/feb-desk/5Star/14.jpg",
         ],
         prices: [950, 1025, 1145],
       },

@@ -118,14 +118,15 @@ function HotelSection() {
                   </span>
                   <div className="py-2 px-5 text-gray-500">
                     <p>
-                      Emaar Al Khalil is ideally located on Ibrahim Khalil
-                      Street, just 400 meters from Haram Sharif...
+                    Emaar Al Khalil is ideally located on Ibrahim Khalil Street, just 400 meters from Haram Sharif. Enjoy air-conditioned rooms with flat-screen TVs, a kettle, and 24/7 front desk service in Arabic and English. Our dedicated staff ensures a comfortable stay for all guests. Book now!
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Ibrahim Al Khalil Street, Makkah, Saudi Arabia
+                      Ibrahim Al Khalil Street - Mesfala, 34452 Makkah, Saudi Arabia
+
                     </p>
                   </div>
                 </div>
@@ -141,14 +142,14 @@ function HotelSection() {
                   </span>
                   <div className="py-2 text-gray-500">
                     <p>
-                      Experience comfort at Emaar Grand Makkah Hotel, a 4-star
-                      hotel just 4-5 minutes’ walk to Haram...
+                    Experience comfort at Emaar Grand Makkah Hotel, a 4-star hotel just 4-5 minutes’ walk to Haram, proudly partnered with Al Habib Travel Ltd for your Umrah. Enjoy modern rooms with stunning views of Al Haram and Makkah city.
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Ibrahim Al Khalil Street, Makkah, Saudi Arabia
+                      Ibrahim Al Khalil Street - Mesfala, 24231 Makkah, Saudi Arabia
                     </p>
                   </div>
                 </div>
@@ -163,14 +164,15 @@ function HotelSection() {
                   </span>
                   <div className="py-2 text-gray-500">
                     <p>
-                      Anjum Makkah is a 2-minute walk from Masjid Al Haram
-                      offering modern accommodations...
+                    Anjum Makkah, just a 2-minute walk from Masjid Al Haram, offers modern accommodations with stunning Haram views. Guests can savor local and international cuisine at the on-site restaurant or enjoy 24/7 room service. With a 24-hour front desk, Al Habib Travel ensures a seamless and comfortable Umrah experience.
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Umm Al Qura Street, Makkah, Saudi Arabia
+                        Umm Al Qura Street, Jabal Al Kaaba District, Makkah, Saudi Arabia 
+
                     </p>
                   </div>
                 </div>
@@ -226,14 +228,16 @@ function HotelSection() {
                   </span>
                   <div className="py-2 text-gray-500">
                     <p>
-                      Odst Al Madinah is just 150 meters from the Prophet’s
-                      Mosque offering unmatched convenience...
+                    Odst Al Madinah is just 150 meters from the Prophet’s Mosque and 250 meters from the Old Bazaar, offering unmatched convenience for pilgrims. Each room features a private bathroom, bathtub, slippers, free toiletries, and a hairdryer. Located 13 km from Prince Mohammed Airport, it’s the perfect Umrah stay!
+ 
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Madinah, Saudi Arabia
+                      Odst, Madinah 42311, Saudi Arabia
+
                     </p>
                   </div>
                 </div>
@@ -250,14 +254,14 @@ function HotelSection() {
                   </span>
                   <div className="py-2 text-gray-500">
                     <p>
-                      Golden Tulip Al Mektan, just 200 meters from Haram Sharif,
-                      offers stunning views...
+                    Golden Tulip Al Mektan, on Bab Al Salam Street, is just 200 meters and a 2-minute walk from Haram Sharif, offering stunning views of the Prophet’s Mosque. Enjoy comfort and style at this premier Madinah hotel, proudly partnered with Al Habib Travel Ltd for your Hajj and Umrah tours.
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Madinah, Saudi Arabia
+                      As Salam Rd, Al Manakhah, Madinah 42311, Saudi Arabia
                     </p>
                   </div>
                 </div>
@@ -273,14 +277,14 @@ function HotelSection() {
                   </span>
                   <div className="py-2 text-gray-500">
                     <p>
-                      Pullman Zam Zam is just 100 meters from Bab Al Salam
-                      offering unparalleled convenience...
+                    Pullman Zam Zam is just 100 meters from Bab Al Salam at Masjid Al Nabawi, offering unparalleled convenience. Enjoy air-conditioned rooms with free WiFi, flat-screen TVs, and select rooms with seating areas and sofa beds. With 4 unique restaurants, Al Habib Travel ensures a luxurious and comfortable Umrah stay.
+
                     </p>
                     <p>
                       <span className="font-bold text-[#d4A10F]">
                         Location:
                       </span>{" "}
-                      Madinah, Saudi Arabia
+                       Amr Bin Al Gmoh Street, Bani Khidrah, Madinah 41499, Saudi Arabia
                     </p>
                   </div>
                 </div>
@@ -299,8 +303,8 @@ function HotelSection() {
               </span>
               <div className="py-2 text-gray-500">
                 <p>
-                  Discover the best food experiences available for you in Makkah
-                  and Madinah...
+                At Al Habib Travel Ltd, we cater to the diverse tastes of Pakistani, Indian, Bangladeshi, British, and European Muslims. From flavorful biryanis and curries to familiar international dishes, our meals are crafted with care, including a special Zabiha dish every week to make your journey even more comforting.
+
                 </p>
               </div>
             </div>

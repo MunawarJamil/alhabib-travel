@@ -15,6 +15,7 @@ const InquiryForm = ({ closePopup }) => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsSending(true);
+
     setStatusMessage("");
 
     try {
@@ -27,8 +28,11 @@ const InquiryForm = ({ closePopup }) => {
       localStorage.setItem("inquiryFilled", "true");
       setStatusMessage("Your inquiry has been sent successfully!");
       form.current.reset();
+      
       setTimeout(() => {
+        window.location.reload();
         router.push("/?scroll=carousel");
+
       }, 1500);
     } catch (error) {
       setStatusMessage("Your inquiry has been sent...");
@@ -40,8 +44,8 @@ const InquiryForm = ({ closePopup }) => {
   return (
     <>
       
-      <div className="bg-gradient-to-r from-[#00454A] via-[#026666] to-[#048080] h-screen ">
-        <div className="bg-white   p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-28">
+      <div className="  ">
+        <div className="bg-white   p-6 md:rounded-lg max-w-sm md:max-w-lg md:border-t-8 md:border-l-8 shadow-2xl mx-auto relative  md:h-auto md:pb-10 md:top-7">
           <button
             onClick={() => {
               closePopup // Close the popup
@@ -70,7 +74,7 @@ const InquiryForm = ({ closePopup }) => {
           <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium">
-                Passanger Name
+                Passenger Name
               </label>
               <input
                 type="text"
@@ -115,12 +119,12 @@ const InquiryForm = ({ closePopup }) => {
                 Total number of Passengers
               </label>
               <input
-                type="number"
+                type="text"
                 id="number"
                 name="from_email"
-                min={1}
+                 
                 className="w-full mt-1 p-2 border rounded-md "
-                placeholder="Minimum one passenger "
+                placeholder="We are total "
                 required
               />
             </div>

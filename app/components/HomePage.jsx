@@ -1,4 +1,5 @@
 "use client";
+
 import Navbar from "./Navbar";
 import { Suspense, useState, useEffect } from "react";
 import Footer from "./Footer";
@@ -12,6 +13,7 @@ import Faqs from "./Faqs";
 import PriceCard from "./PriceCard";
 import InquiryForm from "../enquiry-form/page";
  
+
 function HomePage() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -21,14 +23,20 @@ function HomePage() {
     if (!inquiryFilled) {
       const interval = setInterval(() => {
         setShowPopup(true);
-      }, 7000);  
+      }, 7000);
 
-      return () => clearInterval(interval);  
+      return () => clearInterval(interval);
     }
   }, []);
 
   const handleClosePopup = () => {
     setShowPopup(false);
+  };
+
+  const handleFormSubmit = () => {
+    localStorage.setItem("inquiryFilled", "true");
+    setShowPopup(false);
+    window.location.reload(); // Refresh the browser to reflect the updated state
   };
 
   useEffect(() => {
@@ -50,8 +58,8 @@ function HomePage() {
 
   return (
     <>
-     <div className="   fixed  top-0 z-10   w-full">
-        <Navbar showPopup closePopup={() => setShowPopup(false)}  />
+      <div className="fixed top-0 z-10 w-full">
+        <Navbar showPopup closePopup={() => setShowPopup(false)} />
       </div>
 
       <Hero />
@@ -70,8 +78,8 @@ function HomePage() {
 
       {/* Conditionally render the InquiryForm as a popup */}
       {showPopup && (
-        <div className="  fixed   inset-0 bg-black bg-opacity-50 flex items-center popup-container justify-center z-50">
-          <InquiryForm  closePopup={() => setShowPopup(false)} />
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center popup-container justify-center z-50">
+          <InquiryForm closePopup={handleFormSubmit} />
         </div>
       )}
     </>
