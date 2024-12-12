@@ -51,7 +51,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="fixed top-0 z-10 w-full">
+      <div className="hidden lg:fixed top-0 z-10 w-full">
         <Navbar showPopup closePopup={() => setShowPopup(false)} />
       </div>
 

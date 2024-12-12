@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function page() {
   return (<>
 
-  <div className='fixed top-0 z-10 w-full'>
+  <div className=' hidden lg:fixed top-0 z-10 w-full'>
 <Navbar/>
 </div>
     <div className=' md:h-screen md:pt-24 bg-gradient-to-r from-[#346063]   to-[#1b5858] via-[#0c5252]'>
