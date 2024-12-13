@@ -24,8 +24,8 @@ const Footer = () => {
               <Image
                 src="/logo22.png"
                 alt="Al Habib Travel Logo"
-                width={100} // Equivalent to Tailwind's w-20 (20 * 4 = 80px)
-                height={100} // Equivalent to Tailwind's h-20 (20 * 4 = 80px)
+                width={100}  
+                height={100}  
                 className="mr-3"
               />
               <div>
@@ -97,7 +97,7 @@ const Footer = () => {
             href="https://www.alhabibtravel.co.uk/privacy-policy"
             className=" text-[#D4A10F] hover:text-white"
           >
-            {" "}
+           
             Privacy Policy
           </a>
         </div>

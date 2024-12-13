@@ -10,11 +10,9 @@ import {
   OdestHotel,
   EmaarGrandHotel,
   Food,
-} from "./ImagesGalary";
-import { TransportService } from "../data/images";
+} from "./ImagesGalary"; 
 
-function HotelSection() {
-  // Reusable Dropdown Button Component
+function HotelSection() { 
   const DropdownButton = ({ label, isActive, onClick }) => (
     <button
       onClick={onClick}

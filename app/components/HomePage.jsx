@@ -20,7 +20,7 @@ function HomePage() {
     const inquiryHandled = localStorage.getItem("inquiryFilled");
 
     if (!inquiryHandled) {
-      let appearanceCount = 0; // Track number of popup appearances
+      let appearanceCount = 0; 
 
       // Show the popup after 10 seconds
       const initialTimeout = setTimeout(() => {
@@ -28,18 +28,18 @@ function HomePage() {
         appearanceCount++;
       }, 10000);
 
-      // Reappear logic after 25 seconds
+      
       const reappearTimeout = setTimeout(() => {
         if (appearanceCount === 1) {
           setShowPopup(true);
           appearanceCount++;
-          // localStorage.setItem("inquiryHandled", "true"); // Set flag after second appearance
+          
         }
-      }, 30000); // 10s initial + 25s reappear = 35s total
+      }, 30000);  
       if (appearanceCount === 2) {
         setShowPopup(false);
       }
-      // Cleanup timeouts
+    
       return () => {
         clearTimeout(initialTimeout);
         clearTimeout(reappearTimeout);
@@ -71,7 +71,7 @@ function HomePage() {
       <Faqs />
       <Footer />
 
-      {/* Conditionally render the InquiryForm as a popup */}
+      {/*   render the InquiryForm as a popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-opacity-50 flex items-center popup-container justify-center z-50">
           <InquiryComponent closePopup={handleFormSubmit} />

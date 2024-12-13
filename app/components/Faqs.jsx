@@ -59,7 +59,7 @@ function Faqs() {
             key={`accordion-${index}`}
             type="single"
             collapsible
-            className="mb-6" // Increase the gap between questions
+            className="mb-6"  
           >
             <AccordionItem value={`item-${index}`}>
               <AccordionTrigger className="text-lg  font-medium py-3 px-5 text-black rounded-t-md  hover:bg-yellow-500 hover:text-white hover:no-underline">

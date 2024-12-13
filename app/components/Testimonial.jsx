@@ -25,8 +25,7 @@ const carouselData = [
     rating: 5,
   },
 ];
-
-// Testimonial Component
+ 
 function Testimonial() {
   return (
     <div className="w-[90%] md:w-[70%] mx-auto">
@@ -38,7 +37,7 @@ function Testimonial() {
         What Our <span className="text-[#D4A10F]">Clients</span> Say!
       </div>
 
-      {/* Grid/Flex Content */}
+       
       <div className="overflow-x-auto ">
         <div className="grid grid-cols-3 gap-2 my-10 ml-1 md:ml-0   min-w-[60rem]   ">
           {carouselData.map((item, index) => (
@@ -74,8 +73,8 @@ function Testimonial() {
                       : "/maleAvatar.webp"
                   }
                   alt={`${item.title}'s avatar`}
-                  width={48} // Tailwind's w-12 (12 * 4 = 48px)
-                  height={48} // Tailwind's h-12 (12 * 4 = 48px)
+                  width={48}  
+                  height={48}  
                   className="rounded-full border-2 border-[#D4A10F] mr-4"
                 />
                 <div>

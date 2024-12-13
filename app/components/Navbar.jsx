@@ -15,7 +15,7 @@ function Navbar({ showPopup, setShowPopup }) {
   }
 
   const onClickedContactButton = () => {
-    //router.push("/enquiry-form");
+    
     setShowPopup(true);
   };
 
@@ -33,7 +33,7 @@ function Navbar({ showPopup, setShowPopup }) {
               <GiTireIronCross onClick={onToggleClick} className="w-8 h-10 " />
               <div className="contact">
                 <button
-                  onClick={onClickedContactButton} // Open InquiryForm when clicked
+                  onClick={onClickedContactButton}  
                   className="absolute bg-[#d4A10F] top-[5rem] w-[100%] left-0 py-3 text-white   font-bold text-lg flex items-center justify-center gap-3"
                 >
                   <MdOutlineContactPhone /> CONTACT US
@@ -45,14 +45,14 @@ function Navbar({ showPopup, setShowPopup }) {
           )}
         </div>
 
-        {/* Logo */}
+       
         <div className="cursor-pointer">
           <Image
             onClick={gotoHomePage}
             src="/logo.webp"
             alt="Logo"
-            width={80} // Adjust width as needed
-            height={1200} // Adjust height as needed
+            width={80}  
+            height={1200}  
             className="object-contain"
           />
         </div>

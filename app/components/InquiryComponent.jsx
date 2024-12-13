@@ -20,11 +20,14 @@ const InquiryComponent = ({ closePopup }) => {
 
     try {
       await emailjs.sendForm(
-        "service_vpxmfgq",  
-        "template_rbmwu2c", //habib template key template_aapxyg9 serviceKey:service_3w1brq3
+        "service_evauowe",  
+       
+        "template_jjly3hv",  
         form.current,
-        "g9xwc_LT3hYleKIQm"
-      );
+        "1KSV2yoaQODKDH17L"
+      ); 
+
+
       localStorage.setItem("inquiryFilled", "true");
       setStatusMessage("Your inquiry has been sent successfully!");
       form.current.reset();
@@ -116,7 +119,7 @@ const InquiryComponent = ({ closePopup }) => {
               <input
                 type="text"
                 id="number"
-                name="from_email"
+                name="from_passenger"
                 className="w-full mt-1 p-2 border rounded-md "
                 placeholder="We are total "
                 required

@@ -67,7 +67,7 @@ export const EmaarGrandMakkahHotel = [
   },
 ];
 
-// Placeholder reused
+ 
 export const OdstAlMadinah = [
   {
     small: "/alhabib-assets/odest/OdstAlMadinahMOB/1.png",
@@ -90,8 +90,7 @@ export const OdstAlMadinah = [
     large: "/alhabib-assets/odest/OdstAlMadinahDT/5.jpg",
   },
 ];
-
-// Placeholder reused
+ 
 export const PullmanZamZamMadinah = [
   {
     small: "/alhabib-assets/pullman/PullmanMOB/1.png",
@@ -115,7 +114,7 @@ export const PullmanZamZamMadinah = [
   },
 ];
 
-// Placeholder reused
+ 
 export const GoldenTulipAlMektanMadinah = [
   {
     small: "/alhabib-assets/Golden/AlmektanMOB/0.jpg",
@@ -137,7 +136,7 @@ export const GoldenTulipAlMektanMadinah = [
     small: "/alhabib-assets/Golden/AlmektanMOB/5.png",
     large: "/alhabib-assets/Golden/AlMektanDT/5.jpg",
   },
-]; // Placeholder reused
+];  
 
 export const TransportService = [
   {
